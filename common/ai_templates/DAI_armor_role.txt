@@ -1,0 +1,1837 @@
+generic_armor_role = {
+	role =  armor_role 
+	front_role_override = offence
+	
+	upgrade_prio = { 
+		base = 500
+	}		
+	
+	#********************************************************************************************************#
+	#********************************************************************************************************#
+	#	TIER II : MEDIUM TANKS
+	#********************************************************************************************************#
+	#********************************************************************************************************#
+	
+	#####################################################
+	#	Crusher I (24W)
+	#####################################################
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_24W = {
+		enable = { 
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			
+			AND = {
+				num_of_military_factories > 14
+				num_of_military_factories < 40
+			}
+			
+			NOT = {
+				OR = {
+					has_doctrine = mass_assault
+					has_doctrine = grand_battleplan
+					has_doctrine = superior_firepower
+					has_doctrine = new_mobile_warfare
+				}
+			}
+		}
+		upgrade_prio = { base = 200 }
+		
+		
+	# TEMPLATE
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { always = yes }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 7
+				motorized = 5
+			}
+
+			support = {
+				logistics_company = 1
+				anti_air = 1
+				field_hospital = 1
+				armored_engineer = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_24W_MW = {
+		enable = { 
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			
+			AND = {
+				num_of_military_factories > 14
+				num_of_military_factories < 40
+			}
+			
+			has_doctrine = new_mobile_warfare
+		}
+		upgrade_prio = { base = 200 }
+		
+		
+	# TEMPLATE
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { always = yes }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 6
+				motorized = 6
+			}
+
+			support = {
+				logistics_company = 1
+				anti_air = 1
+				field_hospital = 1
+				armored_engineer = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_24W_SFP = {
+		enable = { 
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			num_of_military_factories > 14
+			num_of_military_factories < 40
+			
+			has_doctrine = superior_firepower
+		}
+		upgrade_prio = { base = 200 }
+		
+		
+	# TEMPLATE
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { always = yes }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 5
+				motorized = 5
+				mot_artillery_brigade = 1
+			}
+
+			support = {
+				logistics_company = 1
+				anti_air = 1
+				field_hospital = 1
+				armored_engineer = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_24W_GBP = {
+		enable = { 
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			
+			AND = {
+				num_of_military_factories > 14
+				num_of_military_factories < 40
+			}
+			
+			has_doctrine = grand_battleplan
+		}
+		upgrade_prio = { base = 200 }
+		
+		
+	# TEMPLATE
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { always = yes }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 7
+				motorized = 5
+			}
+
+			support = {
+				logistics_company = 1
+				anti_air = 1
+				field_hospital = 1
+				armored_engineer = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_24W_MA = {
+		enable = { 
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			
+			AND = {
+				num_of_military_factories > 14
+				num_of_military_factories < 40
+			}
+			
+			has_doctrine = mass_assault
+		}
+		upgrade_prio = { base = 200 }
+		
+		
+	# TEMPLATE
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { always = yes }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 5
+				motorized = 7
+			}
+
+			support = {
+				logistics_company = 1
+				anti_air = 1
+				field_hospital = 1
+				armored_engineer = 1
+			}
+		}
+
+	}
+	
+	#####################################################
+	#	Crusher II (30W)
+	#####################################################
+	
+	####	Crusher II (30W) MOT	####
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_30W_MOT = {
+		enable = { 
+			NOT = {
+				has_tech = mechanised_infantry
+				
+			}
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			
+			AND = {
+				num_of_military_factories > 39
+				num_of_military_factories < 100
+			}
+			
+			NOT = {
+				OR = {
+					has_doctrine = mass_assault
+					has_doctrine = grand_battleplan
+					has_doctrine = superior_firepower
+					has_doctrine = new_mobile_warfare
+				}
+			}
+		}
+		upgrade_prio = { base = 200 }
+		
+	
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { always = yes }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 8
+				motorized = 7
+				medium_tank_destroyer_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				artillery = 1
+				anti_air = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_30W_MOT_MW = {
+		enable = { 
+			NOT = {
+				has_tech = mechanised_infantry
+				
+			}
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			
+			AND = {
+				num_of_military_factories > 39
+				num_of_military_factories < 100
+			}
+			
+			
+			has_doctrine = new_mobile_warfare
+		}
+		upgrade_prio = { base = 200 }
+		
+	
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { always = yes }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 8
+				motorized = 7
+				medium_tank_destroyer_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				artillery = 1
+				anti_air = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_30W_MOT_SFP = {
+		enable = { 
+			NOT = {
+				has_tech = mechanised_infantry
+				
+			}
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			
+			AND = {
+				num_of_military_factories > 39
+				num_of_military_factories < 100
+			}
+			
+			has_doctrine = superior_firepower
+		}
+		upgrade_prio = { base = 200 }
+		
+	
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { always = yes }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 7
+				motorized = 7
+				medium_sp_artillery_brigade = 1
+				medium_tank_destroyer_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				artillery = 1
+				anti_air = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_30W_MOT_GBP = {
+		enable = { 
+			NOT = {
+				has_tech = mechanised_infantry
+				
+			}
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			
+			AND = {
+				num_of_military_factories > 39
+				num_of_military_factories < 100
+			}
+			
+			has_doctrine = grand_battleplan
+		}
+		upgrade_prio = { base = 200 }
+		
+	
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { always = yes }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 8
+				motorized = 6
+				medium_tank_destroyer_brigade = 1
+				medium_sp_anti_air_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				artillery = 1
+				anti_air = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_30W_MOT_MA = {
+		enable = { 
+			NOT = {
+				has_tech = mechanised_infantry
+				
+			}
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			
+			AND = {
+				num_of_military_factories > 39
+				num_of_military_factories < 100
+			}
+			
+			has_doctrine = mass_assault
+		}
+		upgrade_prio = { base = 200 }
+		
+	
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { always = yes }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 7
+				motorized = 8
+				medium_tank_destroyer_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				artillery = 1
+				anti_air = 1
+			}
+		}
+
+	}
+	
+	####	Crusher II (30W) MECH	####
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_30W_MECH = {
+		enable = { 
+			has_tech = mechanised_infantry
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			
+			AND = {
+				num_of_military_factories > 59
+				num_of_military_factories < 100
+			}
+			
+			NOT = {
+				OR = {
+					has_doctrine = mass_assault
+					has_doctrine = grand_battleplan
+					has_doctrine = superior_firepower
+					has_doctrine = new_mobile_warfare
+				}
+			}
+		}
+		upgrade_prio = { base = 200 }
+		
+	
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 8
+				mechanized = 7
+				medium_tank_destroyer_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				artillery = 1
+				anti_air = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_30W_MECH_MW = {
+		enable = { 
+			has_tech = mechanised_infantry
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			
+			AND = {
+				num_of_military_factories > 59
+				num_of_military_factories < 100
+			}
+			
+			has_doctrine = new_mobile_warfare
+		}
+		upgrade_prio = { base = 200 }
+		
+	
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 8
+				mechanized = 7
+				medium_tank_destroyer_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				artillery = 1
+				anti_air = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_30W_MECH_SFP = {
+		enable = { 
+			has_tech = mechanised_infantry
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			
+			AND = {
+				num_of_military_factories > 59
+				num_of_military_factories < 100
+			}
+			
+			has_doctrine = superior_firepower
+		}
+		upgrade_prio = { base = 200 }
+		
+	
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 7
+				mechanized = 7
+				medium_sp_artillery_brigade = 1
+				medium_tank_destroyer_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				artillery = 1
+				anti_air = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_30W_MECH_GBP = {
+		enable = { 
+			has_tech = mechanised_infantry
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			
+			AND = {
+				num_of_military_factories > 59
+				num_of_military_factories < 100
+			}
+			
+			has_doctrine = grand_battleplan
+		}
+		upgrade_prio = { base = 200 }
+		
+	
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 8
+				mechanized = 6
+				medium_tank_destroyer_brigade = 1
+				medium_sp_anti_air_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				artillery = 1
+				anti_air = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_30W_MECH_MA = {
+		enable = { 
+			has_tech = mechanised_infantry
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			
+			AND = {
+				num_of_military_factories > 59
+				num_of_military_factories < 100
+			}
+			
+			has_doctrine = mass_assault
+		}
+		upgrade_prio = { base = 200 }
+		
+	
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 7
+				mechanized = 8
+				medium_tank_destroyer_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				artillery = 1
+				anti_air = 1
+			}
+		}
+
+	}
+	
+	#####################################################
+	#	Crusher III (36W)
+	#####################################################
+	
+	####	Crusher III (36W) MOT	####
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_36W_MOT = {
+		enable = {		
+			NOT = {
+				has_tech = mechanised_infantry
+				
+			}
+			
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			
+			num_of_military_factories > 99  
+			
+			NOT = {
+				AND = {
+					OR = {
+						has_tech = main_battle_tank_chassis
+						has_tech = main_battle_tank
+					}
+					#### OLD UNUSED SINCE THIS TEMPLATES DIES AS SOON AS MODERN HIST THE STAGE num_of_military_factories > 89  
+				}
+			}
+			
+			NOT = {
+				OR = {
+					has_doctrine = mass_assault
+					has_doctrine = grand_battleplan
+					has_doctrine = superior_firepower
+					has_doctrine = new_mobile_warfare
+				}
+			}
+		}
+		upgrade_prio = { base = 200 }
+		
+	
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { always = yes }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 8
+				motorized = 8
+				medium_sp_artillery_brigade = 1
+				medium_tank_destroyer_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				artillery = 1
+				anti_air = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_36W_MOT_MW = {
+		enable = {		
+			NOT = {
+				has_tech = mechanised_infantry
+				
+			}
+			
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			
+			num_of_military_factories > 99  
+			
+			NOT = {
+				AND = {
+					OR = {
+						has_tech = main_battle_tank_chassis
+						has_tech = main_battle_tank
+					}
+					#### OLD UNUSED SINCE THIS TEMPLATES DIES AS SOON AS MODERN HIST THE STAGE   num_of_military_factories > 89    
+				}
+			}
+			
+			has_doctrine = new_mobile_warfare
+		}
+		upgrade_prio = { base = 200 }
+		
+	
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { always = yes }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 8
+				motorized = 8
+				medium_tank_destroyer_brigade = 2
+			}
+
+			support = {
+				assault_engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				artillery = 1
+				anti_air = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_36W_MOT_SFP = {
+		enable = {		
+			NOT = {
+				has_tech = mechanised_infantry
+				
+			}
+			
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			
+			num_of_military_factories > 99  
+			
+			NOT = {
+				AND = {
+					OR = {
+						has_tech = main_battle_tank_chassis
+						has_tech = main_battle_tank
+					}
+					#### OLD UNUSED SINCE THIS TEMPLATES DIES AS SOON AS MODERN HIST THE STAGE num_of_military_factories > 89   
+				}
+			}
+			
+			has_doctrine = superior_firepower
+		}
+		upgrade_prio = { base = 200 }
+		
+	
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { always = yes }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 8
+				motorized = 8
+				medium_sp_artillery_brigade = 1
+				medium_tank_destroyer_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				artillery = 1
+				anti_air = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_36W_MOT_GBP = {
+		enable = {		
+			NOT = {
+				has_tech = mechanised_infantry
+				
+			}
+			
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			
+			num_of_military_factories > 99  
+			
+			NOT = {
+				AND = {
+					OR = {
+						has_tech = main_battle_tank_chassis
+						has_tech = main_battle_tank
+					}
+					#### OLD UNUSED SINCE THIS TEMPLATES DIES AS SOON AS MODERN HIST THE STAGE num_of_military_factories > 89  
+				}
+			}
+			
+			has_doctrine = grand_battleplan
+		}
+		upgrade_prio = { base = 200 }
+		
+	
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { always = yes }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 8
+				motorized = 8
+				medium_tank_destroyer_brigade = 1
+				medium_sp_anti_air_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				artillery = 1
+				anti_air = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_36W_MOT_MA = {
+		enable = {		
+			NOT = {
+				has_tech = mechanised_infantry
+				
+			}
+			
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			
+			num_of_military_factories > 99  
+			
+			NOT = {
+				AND = {
+					OR = {
+						has_tech = main_battle_tank_chassis
+						has_tech = main_battle_tank
+					}
+					#### OLD UNUSED SINCE THIS TEMPLATES DIES AS SOON AS MODERN HIST THE STAGE num_of_military_factories > 89  
+				}
+			}
+			
+			has_doctrine = mass_assault
+		}
+		upgrade_prio = { base = 200 }
+		
+	
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { always = yes }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 8
+				motorized = 8
+				medium_sp_artillery_brigade = 1
+				medium_sp_anti_air_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				artillery = 1
+				anti_air = 1
+			}
+		}
+
+	}
+	
+	####	Crusher III (36W) MECH	####
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_36W_MECH = {
+		enable = { 
+			has_tech = mechanised_infantry
+			num_of_military_factories > 99
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			NOT = {
+				AND = {
+					OR = {
+						has_tech = main_battle_tank_chassis
+						has_tech = main_battle_tank
+					}
+					#### OLD UNUSED SINCE THIS TEMPLATES DIES AS SOON AS MODERN HIST THE STAGE num_of_military_factories > 89  
+				}
+			}
+			
+			NOT = {
+				OR = {
+					has_doctrine = mass_assault
+					has_doctrine = grand_battleplan
+					has_doctrine = superior_firepower
+					has_doctrine = new_mobile_warfare
+				}
+			}
+		}
+		upgrade_prio = { base = 200 }
+		
+	
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 8
+				mechanized = 8
+				medium_sp_artillery_brigade = 1
+				medium_tank_destroyer_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				artillery = 1
+				anti_air = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_36W_MECH_MW = {
+		enable = { 
+			has_tech = mechanised_infantry
+			num_of_military_factories > 99
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			NOT = {
+				AND = {
+					OR = {
+						has_tech = main_battle_tank_chassis
+						has_tech = main_battle_tank
+					}
+					#### OLD UNUSED SINCE THIS TEMPLATES DIES AS SOON AS MODERN HIST THE STAGE num_of_military_factories > 89  
+				}
+			}
+			
+			has_doctrine = new_mobile_warfare
+		}
+		upgrade_prio = { base = 200 }
+		
+	
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 8
+				mechanized = 8
+				medium_tank_destroyer_brigade = 2
+			}
+
+			support = {
+				assault_engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				artillery = 1
+				anti_air = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_36W_MECH_SFP = {
+		enable = { 
+			has_tech = mechanised_infantry
+			num_of_military_factories > 99
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			NOT = {
+				AND = {
+					OR = {
+						has_tech = main_battle_tank_chassis
+						has_tech = main_battle_tank
+					}
+					#### OLD UNUSED SINCE THIS TEMPLATES DIES AS SOON AS MODERN HIST THE STAGE num_of_military_factories > 89  
+				}
+			}
+			
+			has_doctrine = superior_firepower
+		}
+		upgrade_prio = { base = 200 }
+		
+	
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 8
+				mechanized = 8
+				medium_sp_artillery_brigade = 1
+				medium_tank_destroyer_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				artillery = 1
+				anti_air = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_36W_MECH_GBP = {
+		enable = { 
+			has_tech = mechanised_infantry
+			num_of_military_factories > 99
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			NOT = {
+				AND = {
+					OR = {
+						has_tech = main_battle_tank_chassis
+						has_tech = main_battle_tank
+					}
+					#### OLD UNUSED SINCE THIS TEMPLATES DIES AS SOON AS MODERN HIST THE STAGE num_of_military_factories > 89   
+				}
+			}
+			
+			has_doctrine = grand_battleplan
+		}
+		upgrade_prio = { base = 200 }
+		
+	
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 8
+				mechanized = 8
+				medium_tank_destroyer_brigade = 1
+				medium_sp_anti_air_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				artillery = 1
+				anti_air = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MEDIUM_ARMOR_CRUSHER_36W_MECH_MA = {
+		enable = { 
+			has_tech = mechanised_infantry
+			num_of_military_factories > 99
+			OR = {
+				has_tech = basic_medium_tank_chassis
+				has_tech = basic_medium_tank
+			}
+			NOT = {
+				AND = {
+					OR = {
+						has_tech = main_battle_tank_chassis
+						has_tech = main_battle_tank
+					}
+					#### OLD UNUSED SINCE THIS TEMPLATES DIES AS SOON AS MODERN HIST THE STAGE num_of_military_factories > 89  
+				}
+			}
+			
+			has_doctrine = mass_assault
+		}
+		upgrade_prio = { base = 200 }
+		
+	
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+
+		target_template = {
+			
+
+			regiments = {
+				medium_armor = 8
+				mechanized = 8
+				medium_tank_destroyer_brigade = 1
+				medium_sp_anti_air_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				light_tank_recon = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				artillery = 1
+				anti_air = 1
+			}
+		}
+
+	}
+	
+	#********************************************************************************************************#
+	#********************************************************************************************************#
+	#	TIER III : MODERN TANKS
+	#********************************************************************************************************#
+	#********************************************************************************************************#
+	
+	#####################################################
+	#	Titan I (36W)
+	#####################################################
+	
+	GENERIC_MODERN_ARMOR_TITAN_36W = {                     ### Way Better unit	
+		enable = { 
+			OR = {
+				has_tech = main_battle_tank_chassis  
+				has_tech = main_battle_tank 
+			}
+			
+			has_tech = mechanised_infantry
+			
+			AND = { 
+				num_of_military_factories > 99
+				num_of_military_factories < 150
+			}	
+			
+			NOT = {
+				OR = {
+					has_doctrine = mass_assault
+					has_doctrine = grand_battleplan
+					has_doctrine = superior_firepower
+					has_doctrine = new_mobile_warfare
+				}
+			}
+		}
+		upgrade_prio = { base = 200 }
+
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+
+		target_template = {
+			
+
+
+			regiments = {
+				modern_armor = 9
+				mechanized = 9
+				modern_tank_destroyer_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				light_tank_recon = 1
+				artillery = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MODERN_ARMOR_TITAN_36W_MW = {                     ### Way Better unit	
+		enable = { 
+			OR = {
+				has_tech = main_battle_tank_chassis  
+				has_tech = main_battle_tank 
+			}
+			has_tech = mechanised_infantry
+			
+			AND = { 
+				num_of_military_factories > 99
+				num_of_military_factories < 150
+			}
+			
+			has_doctrine = new_mobile_warfare
+		}
+		upgrade_prio = { base = 200 }
+
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+
+		target_template = {
+			
+
+
+			regiments = {
+				modern_armor = 9
+				mechanized = 9
+				modern_tank_destroyer_brigade = 2
+			}
+
+			support = {
+				assault_engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				light_tank_recon = 1
+				artillery = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MODERN_ARMOR_TITAN_36W_SFP = {                     ### Way Better unit	
+		enable = { 
+			OR = {
+				has_tech = main_battle_tank_chassis  
+				has_tech = main_battle_tank 
+			}
+			has_tech = mechanised_infantry
+			
+			AND = { 
+				num_of_military_factories > 99
+				num_of_military_factories < 150
+			}
+			
+			has_doctrine = superior_firepower
+		}
+		upgrade_prio = { base = 200 }
+
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+
+		target_template = {
+			
+
+
+			regiments = {
+				modern_armor = 8
+				mechanized = 7
+				medium_sp_artillery_brigade = 2 
+				modern_tank_destroyer_brigade = 2
+			}
+
+			support = {
+				assault_engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				light_tank_recon = 1
+				artillery = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MODERN_ARMOR_TITAN_36W_GBP = {                     ### Way Better unit	
+		enable = { 
+			OR = {
+				has_tech = main_battle_tank_chassis  
+				has_tech = main_battle_tank 
+			}
+			has_tech = mechanised_infantry
+			
+			AND = { 
+				num_of_military_factories > 99
+				num_of_military_factories < 150
+			}
+			
+			has_doctrine = grand_battleplan
+		}
+		upgrade_prio = { base = 200 }
+
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+
+		target_template = {
+			
+
+
+			regiments = {
+				modern_armor = 10
+				mechanized = 8
+				modern_tank_destroyer_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				light_tank_recon = 1
+				artillery = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MODERN_ARMOR_TITAN_36W_MA = {                     ### Way Better unit	
+		enable = { 
+			OR = {
+				has_tech = main_battle_tank_chassis  
+				has_tech = main_battle_tank 
+			}
+			has_tech = mechanised_infantry
+			
+			AND = { 
+				num_of_military_factories > 99
+				num_of_military_factories < 150
+			}
+			
+			has_doctrine = mass_assault
+		}
+		upgrade_prio = { base = 200 }
+
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+
+		target_template = {
+			
+
+
+			regiments = {
+				modern_armor = 8
+				mechanized = 10
+				modern_tank_destroyer_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				light_tank_recon = 1
+				artillery = 1
+			}
+		}
+
+	}
+	
+	#####################################################
+	#	Titan II (42W)
+	#####################################################
+	
+	GENERIC_MODERN_ARMOR_TITAN_42W = {                     ### Way Better unit	
+		enable = { 
+			OR = {
+				has_tech = main_battle_tank_chassis  
+				has_tech = main_battle_tank 
+			}
+			has_tech = mechanised_infantry
+			
+			num_of_military_factories > 149
+			
+			NOT = {
+				OR = {
+					has_doctrine = mass_assault
+					has_doctrine = grand_battleplan
+					has_doctrine = superior_firepower
+					has_doctrine = new_mobile_warfare
+				}
+			}
+		}
+		upgrade_prio = { base = 200 }
+
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+
+		target_template = {
+			
+
+
+			regiments = {
+				modern_armor = 10
+				modern_sp_artillery_brigade = 1
+				mechanized = 9
+				modern_tank_destroyer_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				light_tank_recon = 1
+				artillery = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MODERN_ARMOR_TITAN_42W_MW = {                     ### Way Better unit	
+		enable = { 
+			OR = {
+				has_tech = main_battle_tank_chassis  
+				has_tech = main_battle_tank 
+			}
+			has_tech = mechanised_infantry
+			
+			num_of_military_factories > 149
+			
+			has_doctrine = new_mobile_warfare
+		}
+		upgrade_prio = { base = 200 }
+
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+
+		target_template = {
+			
+
+
+			regiments = {
+				modern_armor = 10
+				mechanized = 10
+				modern_tank_destroyer_brigade = 2
+			}
+
+			support = {
+				assault_engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				light_tank_recon = 1
+				artillery = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MODERN_ARMOR_TITAN_42W_SFP = {                     ### Way Better unit	
+		enable = { 
+			OR = {
+				has_tech = main_battle_tank_chassis  
+				has_tech = main_battle_tank 
+			}
+			has_tech = mechanised_infantry
+			
+			num_of_military_factories > 149
+			
+			has_doctrine = superior_firepower
+		}
+		upgrade_prio = { base = 200 }
+
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+
+		target_template = {
+			
+
+
+			regiments = {
+				modern_armor = 9
+				mechanized = 9
+				modern_sp_artillery_brigade = 2
+				modern_tank_destroyer_brigade = 2
+			}
+
+			support = {
+				assault_engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				light_tank_recon = 1
+				artillery = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MODERN_ARMOR_TITAN_42W_GBP = {                     ### Way Better unit	
+		enable = { 
+			OR = {
+				has_tech = main_battle_tank_chassis  
+				has_tech = main_battle_tank 
+			}
+			has_tech = mechanised_infantry
+			
+			num_of_military_factories > 149
+			
+			has_doctrine = grand_battleplan
+		}
+		upgrade_prio = { base = 200 }
+
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+
+		target_template = {
+			
+
+
+			regiments = {
+				modern_armor = 10
+				mechanized = 9
+				modern_tank_destroyer_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				light_tank_recon = 1
+				artillery = 1
+			}
+		}
+
+	}
+	
+	GENERIC_MODERN_ARMOR_TITAN_42W_MA = {                     ### Way Better unit	
+		enable = { 
+			OR = {
+				has_tech = main_battle_tank_chassis  
+				has_tech = main_battle_tank 
+			}
+			has_tech = mechanised_infantry
+			
+			num_of_military_factories > 149
+			
+			has_doctrine = mass_assault
+		}
+		upgrade_prio = { base = 200 }
+
+	# TEMPLATE
+		
+		reinforce_prio = 2
+		
+		# workaround for a PDX bug https://forum.paradoxplaza.com/forum/threads/hoi-4-incremental-division-upgrade-does-not-work-in-most-cases.1414193/
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+
+		target_template = {
+			
+
+
+			regiments = {
+				modern_armor = 9
+				mechanized = 10
+				modern_tank_destroyer_brigade = 1
+			}
+
+			support = {
+				assault_engineer = 1
+				anti_air = 1
+				logistics_company = 1
+				signal_company = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				light_tank_recon = 1
+				artillery = 1
+			}
+		}
+
+	}
+}
