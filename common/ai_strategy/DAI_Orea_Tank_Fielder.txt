@@ -9,13 +9,13 @@ small_armor_army_offset = { # Factory Size
     ai_strategy = {
         type = role_ratio
         id = armor_role
-        value = 80
+        value = 30
     }
 	
 	ai_strategy = {
         type = build_army
         id = armor_role
-        value = 80
+        value = 30
     }
 }
 
@@ -25,13 +25,13 @@ medium_armor_army_offset = { # Factory Size
     ai_strategy = {
         type = role_ratio
         id = armor_role
-		value = 80
+		value = 30
     }
 	
 	ai_strategy = {
         type = build_army
         id = armor_role
-        value = 80
+        value = 30
     }
 }
 
@@ -41,13 +41,13 @@ large_armor_army_offset = { # Factory Size
     ai_strategy = {
         type = role_ratio
         id = armor_role
-        value = 80
+        value = 30
     }
 	
 	ai_strategy = {
         type = build_army
         id = armor_role
-        value = 80
+        value = 30
     }
 } 
 
@@ -57,49 +57,33 @@ large_armor_production_offset = { # Army Size
 		has_army_size = { size > 56 type = infantry }
 	}
 	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = role_ratio
-		id = infantry
-		value = -40
-	}
 	
-	ai_strategy = {
-		type = build_army
-		id = infantry
-		value = -40
-	}
-	
-	ai_strategy = {
-		type = equipment_production_factor
-		id = infantry
-		value = -10
-	}
 	ai_strategy = {
 		type = role_ratio
 		id = armor_role
-		value = 80
+		value = 30
 	}
 	
 	ai_strategy = {
         type = build_army
         id = armor_role
-        value = 80
+        value = 30
     }
 	
 	ai_strategy = {
 		type = equipment_production_factor
 		id = armor
-		value = 80
+		value = 40
 	}
 	ai_strategy = {
 		type = equipment_production_factor
 		id = motorized
-		value = 120
+		value = 60
 	}
 	ai_strategy = {
 		type = equipment_production_factor
 		id = mechanized
-		value = 120
+		value = 60
 	}
 
 	ai_strategy = {
@@ -117,6 +101,12 @@ large_armor_production_offset = { # Army Size
 	ai_strategy = {
 		type = equipment_variant_production_factor
 		id = medium_tank_aa_chassis
+		value = 250
+	}
+	
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = heavy_tank_destroyer_chassis
 		value = 250
 	}
 }
@@ -127,49 +117,33 @@ massive_armor_production_offset = { # Army Size
 		has_army_size = { size > 112 type = infantry }
 	}
 	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = role_ratio
-		id = infantry
-		value = -40
-	}
 	
-	ai_strategy = {
-		type = build_army
-		id = infantry
-		value = -40
-	}
-	
-	ai_strategy = {
-		type = equipment_production_factor
-		id = infantry
-		value = -10
-	}
 	ai_strategy = {
 		type = role_ratio
 		id = armor_role
-		value = 80
+		value = 30
 	}
 	
 	ai_strategy = {
         type = build_army
         id = armor_role
-        value = 80
+        value = 30
     }
 	
 	ai_strategy = {
 		type = equipment_production_factor
 		id = armor
-		value = 80
+		value = 40
 	}
 	ai_strategy = {
 		type = equipment_production_factor
 		id = motorized
-		value = 120
+		value = 60
 	}
 	ai_strategy = {
 		type = equipment_production_factor
 		id = mechanized
-		value = 120
+		value = 60
 	}
 	
 	ai_strategy = {
@@ -187,6 +161,12 @@ massive_armor_production_offset = { # Army Size
 	ai_strategy = {
 		type = equipment_variant_production_factor
 		id = medium_tank_aa_chassis
+		value = 250
+	}
+	
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = heavy_tank_destroyer_chassis
 		value = 250
 	}
 }
@@ -197,50 +177,34 @@ gigantic_armor_production_offset = { # Army Size
 		has_army_size = { size > 168 type = infantry }
 	}
 	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = role_ratio
-		id = infantry
-		value = -40
-	}
 	
-	ai_strategy = {
-		type = build_army
-		id = infantry
-		value = -40
-	}
-	
-	ai_strategy = {
-		type = equipment_production_factor
-		id = infantry
-		value = -10
-	}
 	
 	ai_strategy = {
 		type = role_ratio
 		id = armor_role
-		value = 80
+		value = 30
 	}
 	
 	ai_strategy = {
         type = build_army
         id = armor_role
-        value = 80
+        value = 30
     }
 	
 	ai_strategy = {
 		type = equipment_production_factor
 		id = armor
-		value = 80
+		value = 40
 	}
 	ai_strategy = {
 		type = equipment_production_factor
 		id = motorized
-		value = 120
+		value = 60
 	}
 	ai_strategy = {
 		type = equipment_production_factor
 		id = mechanized
-		value = 120
+		value = 60
 	}
 	
 	ai_strategy = {
@@ -261,4 +225,9 @@ gigantic_armor_production_offset = { # Army Size
 		value = 250
 	}
 	
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = heavy_tank_destroyer_chassis
+		value = 250
+	}
 }
