@@ -105,7 +105,7 @@ heavy_armour_generic = {
     }
 
     mechanized_heavy = {
-        can_upgrade_in_field = { always = no }
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
 		reinforce_prio = 2
 
 		upgrade_prio = {
@@ -122,10 +122,10 @@ heavy_armour_generic = {
 				factor = 0
 				is_eligible_for_improved_heavy_armor_production = no
 			}
-			modifier = {
-				factor = 0
-				has_equipment = { mechanized_equipment < 0 }	# Transition gate: don't switch until mech stock is real
-			}
+			##modifier = {
+			##	factor = 0
+			##	has_equipment = { mechanized_equipment < 0 }	# Transition gate: don't switch until mech stock is real
+			##}
 			modifier = {
 				factor = 2
 				is_eligible_for_improved_heavy_armor_production = yes
@@ -150,7 +150,13 @@ heavy_armour_generic = {
     }
 
 	heavy_modern_armour = {
-		can_upgrade_in_field = { always = no }
+		can_upgrade_in_field = { 
+			has_equipment = { mechanized_equipment > 10 }
+			OR = {
+				has_equipment = { modern_tank_equipment > 10 }
+				has_equipment = { modern_tank_chassis > 10 }
+			}
+		}
 		reinforce_prio = 2
 
 		upgrade_prio = {

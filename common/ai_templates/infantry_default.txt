@@ -163,7 +163,12 @@ line_infantry = {
 	}
 
 	space_marines_2 = {
-		can_upgrade_in_field = { always = yes }
+		can_upgrade_in_field = { 
+			OR = {
+				has_equipment = { heavy_tank_equipment > 10 }
+				has_equipment = { heavy_tank_chassis > 10 }
+			}
+		}
 		
 		upgrade_prio = {
 			base = 100
@@ -212,7 +217,12 @@ line_infantry = {
 	}
 
 	space_marines_3 = {
-		can_upgrade_in_field = { always = yes }
+		can_upgrade_in_field = { 
+			OR = {
+				has_equipment = { heavy_tank_equipment > 10 }
+				has_equipment = { heavy_tank_chassis > 10 }
+			}
+		}
 		
 		upgrade_prio = {
 			base = 100

@@ -109,7 +109,7 @@ armour_more_tanks = {
 	}
 
 	mw_mechanized_medium = {
-		can_upgrade_in_field = { always = no }
+		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
 		reinforce_prio = 2
 
 		upgrade_prio = {
@@ -130,10 +130,10 @@ armour_more_tanks = {
 				factor = 2
 				is_eligible_for_improved_armor_production = yes
 			}
-			modifier = {
-				factor = 0
-				has_equipment = { mechanized_equipment < 0 }	# Transition gate: don't switch until mech stock is real
-			}
+			##modifier = {
+			##	factor = 0
+			##	has_equipment = { mechanized_equipment < 0 }	# Transition gate: don't switch until mech stock is real
+			##}
 		}
 
 		target_template = {
@@ -154,7 +154,13 @@ armour_more_tanks = {
 	}
 
 	mw_modern_armour = {
-		can_upgrade_in_field = { always = no }
+		can_upgrade_in_field = { 
+			has_equipment = { mechanized_equipment > 10 }
+			OR = {
+				has_equipment = { modern_tank_equipment > 10 }
+				has_equipment = { modern_tank_chassis > 10 }
+			}
+		}
 		reinforce_prio = 2
 
 		upgrade_prio = {

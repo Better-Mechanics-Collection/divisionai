@@ -118,7 +118,12 @@ heavy_infantry = {
 	}
 
 	sm_shock_infantry_0 = {
-		can_upgrade_in_field = { always = yes }
+		can_upgrade_in_field = { 
+			OR = {
+				has_equipment = { heavy_tank_destroyer_chassis > 10 }
+				has_equipment = { heavy_tank_destroyer_equipment > 10 }
+			}
+		}
 		
 		upgrade_prio = {
 			base = 100
@@ -155,7 +160,12 @@ heavy_infantry = {
 	}
 
 	sm_shock_infantry_1 = {
-		can_upgrade_in_field = { always = yes }
+		can_upgrade_in_field = { 
+			OR = {
+				has_equipment = { heavy_tank_destroyer_chassis > 10 }
+				has_equipment = { heavy_tank_destroyer_equipment > 10 }
+			}
+		}
 		
 		upgrade_prio = {
 			base = 100
@@ -204,7 +214,17 @@ heavy_infantry = {
 	}
 
 	sm_shock_infantry_2 = {
-		can_upgrade_in_field = { always = yes }
+		can_upgrade_in_field = { 
+			OR = {
+				has_equipment = { heavy_tank_destroyer_chassis > 10 }
+				has_equipment = { heavy_tank_destroyer_equipment > 10 }
+			}
+			
+			OR = {
+				has_equipment = { light_tank_aa_chassis > 10 }
+				has_equipment = { light_tank_aa_equipment > 10 }
+			}
+		}
 		
 		upgrade_prio = {
 			base = 100
