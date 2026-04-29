@@ -13,5 +13,5 @@ dependencies={
 }
 name="Better Mechanics : AI Divisions"
 picture="thumbnail.png"
-supported_version="1.17.*"
+supported_version="1.18.*"
 remote_file_id="2996504479"
