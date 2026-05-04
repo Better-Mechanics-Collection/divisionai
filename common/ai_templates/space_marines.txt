@@ -24,7 +24,7 @@ light_sp_infantry = {
 	}
 
 	spg_space_marine_1 = {
-		can_upgrade_in_field = { always = yes }
+		can_upgrade_in_field = { always = no }
 		
 		upgrade_prio = {
 			base = 100
@@ -48,7 +48,7 @@ light_sp_infantry = {
 	}
 
 	spg_space_marine_2 = {
-		can_upgrade_in_field = { always = yes }
+		can_upgrade_in_field = { always = no }
 		
 		upgrade_prio = {
 			base = 100
@@ -83,8 +83,8 @@ light_sp_infantry = {
 		}
 	}
 
-	late_space_marine = {
-		can_upgrade_in_field = { always = yes }
+	spg_space_marine_3 = {
+		can_upgrade_in_field = { always = no }
 		
 		upgrade_prio = {
 			base = 1000
