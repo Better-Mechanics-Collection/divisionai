@@ -427,6 +427,7 @@ build_mot_army_1 = {
 		manpower_per_military_factory > 9000
 		has_manpower > 375000
 		has_army_size = { size > 75 type = infantry }
+		has_equipment = { motorized_equipment > 1000 }
 	}
 	abort_when_not_enabled = yes
 
@@ -440,6 +441,7 @@ build_mot_army_2 = {
 		manpower_per_military_factory > 9000
 		has_manpower > 750000
 		has_army_size = { size > 150 type = infantry }
+		has_equipment = { motorized_equipment > 1000 }
 	}
 	abort_when_not_enabled = yes
 
@@ -453,6 +455,7 @@ build_mot_army_3 = {
 		manpower_per_military_factory > 9000
 		has_manpower > 1125000
 		has_army_size = { size > 225 type = infantry }
+		has_equipment = { motorized_equipment > 1000 }
 	}
 	abort_when_not_enabled = yes
 
