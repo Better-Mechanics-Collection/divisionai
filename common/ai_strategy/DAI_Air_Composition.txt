@@ -22,7 +22,7 @@ light_aircraft_production = {
 
     ai_strategy = { type = unit_ratio id = fighter value = 60 }
     ai_strategy = { type = unit_ratio id = cas value = 20 }
-    ai_strategy = { type = air_factory_balance value = 40 }
+    ai_strategy = { type = air_factory_balance value = 60 }
 }
 
 tac_bomber_production_default = {
@@ -67,9 +67,9 @@ strat_bomber_air_production_strategic_destruction = {
 
     # STRAT-dominant but more integrated
     ai_strategy = { type = unit_ratio id = strategic_bomber value = 45 }
-    ai_strategy = { type = unit_ratio id = fighter value = 20 }  # Fighter is law - MORE fighters for escort
-    ai_strategy = { type = unit_ratio id = heavy_fighter value = 70 }
-    ai_strategy = { type = unit_ratio id = cas value = 20 }  # Some ground attack capability
+    ai_strategy = { type = unit_ratio id = fighter value = -20 }  
+    ai_strategy = { type = unit_ratio id = heavy_fighter value = 90 }
+    ai_strategy = { type = unit_ratio id = cas value = 30 }  # Some ground attack capability
     ai_strategy = { type = unit_ratio id = tactical_bomber value = -10 }
 }
 

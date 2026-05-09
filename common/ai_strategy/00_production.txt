@@ -720,58 +720,68 @@ naval_powers_make_more_marines = {
 #	CIVS, MILS AND DOCKS
 ############################################################################################################
 
-# Peace time - Build civs
-peacetime_industrialization = {
+# Peace time - Build civs (majors)
+peacetime_industrialization_major = {
 	enable = {
-		threat < 0.10
+		is_major = yes
+		threat < 0.08
 		has_war = no
-		num_of_civilian_factories < 50  # Stop when we have enough
-		OR = {
-			do_expand_oil = no
-			do_expand_rubber = no
-		}
-		check_variable = { resource@rubber > 0 }
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = added_military_to_civilian_factory_ratio
-		value = -50  # Was -100, too extreme
+		value = -50
 	}
 	ai_strategy = {
 		type = building_target
 		id = industrial_complex
-		value = 150  # Was 300
+		value = 150
 	}
 	ai_strategy = {
 		type = building_target
 		id = fuel_silo
 		value = -100
 	}
-	##ai_strategy = {
-	##	type = building_target
-	##	id = synthetic_refinery
-	##	value = -100
-	##}
 }
 
-# Preparation phase - Balance civs and mils
-preparation_phase = {
+# Peace time - Build civs (minors)
+peacetime_industrialization_minor = {
 	enable = {
-		threat > 0.10
-		threat < 0.20
+		is_major = no
+		threat < 0.08
 		has_war = no
-		OR = {
-			do_expand_oil = no
-			do_expand_rubber = no
-		}
-		check_variable = { resource@rubber > 0 }
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = added_military_to_civilian_factory_ratio
-		value = 25  # Slightly favor mils
+		value = -50
+	}
+	ai_strategy = {
+		type = building_target
+		id = industrial_complex
+		value = 100
+	}
+	ai_strategy = {
+		type = building_target
+		id = fuel_silo
+		value = -100
+	}
+}
+
+# Preparation phase - Balance civs and mils
+preparation_phase = {
+	enable = {
+		threat > 0.08
+		threat < 0.15
+		has_war = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = added_military_to_civilian_factory_ratio
+		value = 25
 	}
 	ai_strategy = {
 		type = building_target
@@ -788,19 +798,9 @@ preparation_phase = {
 # War preparation - Focus on mils
 war_preparation = {
 	enable = {
-		OR = {
-			threat > 0.20
-			AND = {
-				threat > 0.15
-				any_enemy_country = { always = yes }
-			}
-		}
+		threat > 0.15
+		threat < 0.20
 		has_war = no
-		OR = {
-			do_expand_oil = no
-			do_expand_rubber = no
-		}
-		check_variable = { resource@rubber > 0 }
 	}
 	abort_when_not_enabled = yes
 
@@ -822,19 +822,15 @@ war_preparation = {
 
 # Total war - All mils
 total_war_effort = {
-	enable = {
+	OR = {
+		threat > 0.20
 		has_war = yes
-		OR = {
-			do_expand_oil = no
-			do_expand_rubber = no
-		}
-		check_variable = { resource@rubber > 0 }
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = added_military_to_civilian_factory_ratio
-		value = 200  # Was 300
+		value = 250
 	}
 	ai_strategy = {
 		type = building_target
@@ -853,30 +849,24 @@ total_war_effort = {
 	}
 }
 
-# Post-war demobilization
+# Post-war demobilization - reconvert mil-heavy wartime economy back to civs
 demobilization_effort = {
 	enable = {
 		has_war = no
-		threat < 0.10
-		### date > 1739.1.1  # Don't demobilize too early
-		num_of_military_factories > num_of_civilian_factories
-		OR = {
-			do_expand_oil = no
-			do_expand_rubber = no
-		}
-		check_variable = { resource@rubber > 0 }
+		threat < 0.08                                      # Match peacetime threshold
+		num_of_military_factories > num_of_civilian_factories  # Actually mil-heavy
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = building_target
 		id = industrial_complex
-		value = 100
+		value = 200                                        # Was 100, push civs harder
 	}
 	ai_strategy = {
 		type = building_target
 		id = arms_factory
-		value = -50  # Was -100
+		value = -150                                       # Was -50, needs to actually suppress mil building
 	}
 }
 
