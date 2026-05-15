@@ -22,7 +22,7 @@ light_aircraft_production = {
 
     ai_strategy = { type = unit_ratio id = fighter value = 60 }
     ai_strategy = { type = unit_ratio id = cas value = 20 }
-    ai_strategy = { type = air_factory_balance value = 60 }
+    ai_strategy = { type = air_factory_balance value = 70 }
 }
 
 tac_bomber_production_default = {

@@ -726,6 +726,10 @@ peacetime_industrialization_major = {
 		is_major = yes
 		threat < 0.08
 		has_war = no
+		OR = {
+			do_expand_oil = no
+			do_expand_rubber = no
+		}
 	}
 	abort_when_not_enabled = yes
 
@@ -751,6 +755,10 @@ peacetime_industrialization_minor = {
 		is_major = no
 		threat < 0.08
 		has_war = no
+		OR = {
+			do_expand_oil = no
+			do_expand_rubber = no
+		}
 	}
 	abort_when_not_enabled = yes
 
@@ -776,6 +784,10 @@ preparation_phase = {
 		threat > 0.08
 		threat < 0.15
 		has_war = no
+		OR = {
+			do_expand_oil = no
+			do_expand_rubber = no
+		}
 	}
 	abort_when_not_enabled = yes
 
@@ -801,6 +813,10 @@ war_preparation = {
 		threat > 0.15
 		threat < 0.20
 		has_war = no
+		OR = {
+			do_expand_oil = no
+			do_expand_rubber = no
+		}
 	}
 	abort_when_not_enabled = yes
 
@@ -825,6 +841,10 @@ total_war_effort = {
 	OR = {
 		threat > 0.20
 		has_war = yes
+		OR = {
+			do_expand_oil = no
+			do_expand_rubber = no
+		}
 	}
 	abort_when_not_enabled = yes
 
@@ -855,6 +875,10 @@ demobilization_effort = {
 		has_war = no
 		threat < 0.08                                      # Match peacetime threshold
 		num_of_military_factories > num_of_civilian_factories  # Actually mil-heavy
+		OR = {
+			do_expand_oil = no
+			do_expand_rubber = no
+		}
 	}
 	abort_when_not_enabled = yes
 
@@ -867,51 +891,6 @@ demobilization_effort = {
 		type = building_target
 		id = arms_factory
 		value = -150                                       # Was -50, needs to actually suppress mil building
-	}
-}
-
-majors_need_dockyards = {
-	allowed = {
-		is_major = yes
-	}
-	enable = {
-		is_major = yes
-		num_of_military_factories > 9
-		surrender_progress < 0.05
-		set_temp_variable = { mil_fact = num_of_naval_factories }
-		divide_temp_variable = { mil_fact = num_of_military_factories }
-		check_variable = {
-			var = mil_fact
-			value = 0.10
-			compare = less_than
-		}
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = dockyard_to_military_factory_ratio
-		value = 1000
-	}
-}
-
-minors_need_dockyards = {
-	enable = {
-		is_major = no
-		num_of_military_factories > 9
-		surrender_progress < 0.05
-		set_temp_variable = { mil_fact = num_of_naval_factories }
-		divide_temp_variable = { mil_fact = num_of_military_factories }
-		check_variable = {
-			var = mil_fact
-			value = 0.05
-			compare = less_than
-		}
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = dockyard_to_military_factory_ratio
-		value = 1000
 	}
 }
 

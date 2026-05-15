@@ -129,14 +129,6 @@ produce_MECHANIZED_EQ_for_fuck_sake_emergency = {
 #	MISC
 ######################################
 
-make_trains = {
-	enable = { 
-		is_eligible_for_armor_production = yes
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = { type = equipment_production_min_factories_archetype id = train_equipment value = 1 }
-}
-
 make_trucks = { 
 	enable = { 
 		is_eligible_for_armor_production = yes
@@ -228,20 +220,6 @@ aNCFO_AI_motorized_surplus = {
 		type = equipment_production_factor
 		id = motorized
 		value = -50
-	}
-}
-
-aNCFO_AI_train_supplies = {
-	enable = {
-		is_major = yes
-		has_equipment = { train_equipment < 100 }
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = equipment_production_factor
-		id = train
-		value = 100
 	}
 }
 
