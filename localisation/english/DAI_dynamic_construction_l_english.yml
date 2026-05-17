@@ -1,0 +1,10 @@
+l_english:
+ DAI_RULE_DYNAMIC_CONSTRUCTION_PROFILE: "Better Mechanics AI Construction"
+ DAI_RULE_OPTION_BALANCED: "Balanced"
+ DAI_RULE_OPTION_CONSERVATIVE: "Conservative"
+ DAI_RULE_OPTION_AGGRESSIVE: "Aggressive"
+ DAI_RULE_OPTION_DEBUG: "Aggressive + Debug"
+ DAI_RULE_DYNAMIC_CONSTRUCTION_BALANCED_DESC: "AI construction uses the default dynamic 10.9 economy model."
+ DAI_RULE_DYNAMIC_CONSTRUCTION_CONSERVATIVE_DESC: "AI construction leans more toward civilian rebuilding and delays support construction unless it has spare civilian capacity."
+ DAI_RULE_DYNAMIC_CONSTRUCTION_AGGRESSIVE_DESC: "AI construction militarizes earlier, accepts support construction sooner, and reacts harder to wartime pressure."
+ DAI_RULE_DYNAMIC_CONSTRUCTION_DEBUG_DESC: "Uses the aggressive construction profile and writes monthly construction evaluation details to the log."

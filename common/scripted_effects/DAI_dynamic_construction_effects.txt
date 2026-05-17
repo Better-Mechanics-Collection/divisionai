@@ -1,0 +1,713 @@
+DAI_dynamic_construction_clear_flags = {
+	clr_country_flag = DAI_dc_civ_foundation
+	clr_country_flag = DAI_dc_civ_growth
+	clr_country_flag = DAI_dc_civ_recovery
+	clr_country_flag = DAI_dc_mil_prepare
+	clr_country_flag = DAI_dc_mil_war
+	clr_country_flag = DAI_dc_mil_crisis
+	clr_country_flag = DAI_dc_posture_bootstrap
+	clr_country_flag = DAI_dc_posture_growth
+	clr_country_flag = DAI_dc_posture_mobilizing
+	clr_country_flag = DAI_dc_posture_wartime
+	clr_country_flag = DAI_dc_posture_crisis
+	clr_country_flag = DAI_dc_posture_recovery
+	clr_country_flag = DAI_dc_postwar_rebuild
+	clr_country_flag = DAI_dc_profile_conservative
+	clr_country_flag = DAI_dc_profile_aggressive
+	clr_country_flag = DAI_dc_profile_debug
+	clr_country_flag = DAI_dc_target_civ_16
+	clr_country_flag = DAI_dc_target_civ_30
+	clr_country_flag = DAI_dc_target_civ_45
+	clr_country_flag = DAI_dc_target_civ_70
+	clr_country_flag = DAI_dc_target_civ_95
+	clr_country_flag = DAI_dc_target_civ_130
+	clr_country_flag = DAI_dc_target_civ_180
+	clr_country_flag = DAI_dc_target_mil_6
+	clr_country_flag = DAI_dc_target_mil_18
+	clr_country_flag = DAI_dc_target_mil_35
+	clr_country_flag = DAI_dc_target_mil_60
+	clr_country_flag = DAI_dc_target_mil_100
+	clr_country_flag = DAI_dc_target_mil_160
+	clr_country_flag = DAI_dc_target_mil_240
+	clr_country_flag = DAI_dc_refinery_low
+	clr_country_flag = DAI_dc_refinery_medium
+	clr_country_flag = DAI_dc_refinery_high
+	clr_country_flag = DAI_dc_fuel_silo_low
+	clr_country_flag = DAI_dc_fuel_silo_high
+	clr_country_flag = DAI_dc_airbase_support
+	clr_country_flag = DAI_dc_aa_support
+	clr_country_flag = DAI_dc_infra_support
+	clr_country_flag = DAI_dc_resource_infra_support
+	clr_country_flag = DAI_dc_supply_support
+	clr_country_flag = DAI_dc_defense_support
+	clr_country_flag = DAI_dc_coastal_support
+	clr_country_flag = DAI_dc_special_facilities
+	clr_country_flag = DAI_dc_nuclear_facilities
+	clr_country_flag = DAI_dc_airbase_support_queued
+	clr_country_flag = DAI_dc_aa_support_queued
+	clr_country_flag = DAI_dc_infra_support_queued
+	clr_country_flag = DAI_dc_resource_infra_support_queued
+	clr_country_flag = DAI_dc_logistics_support_queued
+}
+
+DAI_dynamic_construction_apply_game_rule_profile = {
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = DAI_dynamic_construction_profile
+				option = CONSERVATIVE
+			}
+		}
+		set_country_flag = DAI_dc_profile_conservative
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = DAI_dynamic_construction_profile
+				option = AGGRESSIVE
+			}
+		}
+		set_country_flag = DAI_dc_profile_aggressive
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = DAI_dynamic_construction_profile
+				option = DEBUG
+			}
+		}
+		set_country_flag = DAI_dc_profile_debug
+		set_country_flag = DAI_dc_profile_aggressive
+	}
+}
+
+DAI_dynamic_construction_set_industry_targets = {
+	set_variable = { var = DAI_dc_total_industry value = DAI_dc_current_civs }
+	add_to_variable = { var = DAI_dc_total_industry value = DAI_dc_current_mils }
+	if = {
+		limit = { check_variable = { DAI_dc_total_industry < 8 } }
+		set_variable = { var = DAI_dc_total_industry value = 8 }
+	}
+
+	set_variable = { var = DAI_dc_target_civ_ratio value = 0.60 }
+	set_variable = { var = DAI_dc_target_mil_ratio value = 0.40 }
+
+	if = {
+		limit = { has_country_flag = DAI_dc_posture_bootstrap }
+		set_variable = { var = DAI_dc_target_civ_ratio value = 0.72 }
+		set_variable = { var = DAI_dc_target_mil_ratio value = 0.28 }
+	}
+	if = {
+		limit = { has_country_flag = DAI_dc_posture_growth }
+		set_variable = { var = DAI_dc_target_civ_ratio value = 0.62 }
+		set_variable = { var = DAI_dc_target_mil_ratio value = 0.38 }
+	}
+	if = {
+		limit = { has_country_flag = DAI_dc_posture_recovery }
+		set_variable = { var = DAI_dc_target_civ_ratio value = 0.66 }
+		set_variable = { var = DAI_dc_target_mil_ratio value = 0.34 }
+	}
+	if = {
+		limit = { has_country_flag = DAI_dc_posture_mobilizing }
+		set_variable = { var = DAI_dc_target_civ_ratio value = 0.42 }
+		set_variable = { var = DAI_dc_target_mil_ratio value = 0.58 }
+	}
+	if = {
+		limit = { has_country_flag = DAI_dc_posture_wartime }
+		set_variable = { var = DAI_dc_target_civ_ratio value = 0.35 }
+		set_variable = { var = DAI_dc_target_mil_ratio value = 0.65 }
+	}
+	if = {
+		limit = { has_country_flag = DAI_dc_posture_crisis }
+		set_variable = { var = DAI_dc_target_civ_ratio value = 0.20 }
+		set_variable = { var = DAI_dc_target_mil_ratio value = 0.80 }
+	}
+	if = {
+		limit = { has_country_flag = DAI_dc_postwar_rebuild }
+		set_variable = { var = DAI_dc_target_civ_ratio value = 0.72 }
+		set_variable = { var = DAI_dc_target_mil_ratio value = 0.28 }
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DAI_dc_profile_conservative
+			NOT = { has_country_flag = DAI_dc_posture_crisis }
+			NOT = { has_country_flag = DAI_dc_posture_wartime }
+		}
+		add_to_variable = { DAI_dc_target_civ_ratio = 0.06 }
+		add_to_variable = { DAI_dc_target_mil_ratio = -0.06 }
+	}
+	if = {
+		limit = {
+			has_country_flag = DAI_dc_profile_aggressive
+			NOT = { has_country_flag = DAI_dc_posture_bootstrap }
+			NOT = { has_country_flag = DAI_dc_postwar_rebuild }
+		}
+		add_to_variable = { DAI_dc_target_civ_ratio = -0.07 }
+		add_to_variable = { DAI_dc_target_mil_ratio = 0.07 }
+	}
+
+	set_variable = { var = DAI_dc_target_civs value = DAI_dc_total_industry }
+	multiply_variable = { DAI_dc_target_civs = DAI_dc_target_civ_ratio }
+	set_variable = { var = DAI_dc_target_mils value = DAI_dc_total_industry }
+	multiply_variable = { DAI_dc_target_mils = DAI_dc_target_mil_ratio }
+
+	if = {
+		limit = {
+			has_country_flag = DAI_dc_posture_bootstrap
+			is_major = no
+			check_variable = { DAI_dc_target_civs < 16 }
+		}
+		set_variable = { var = DAI_dc_target_civs value = 16 }
+	}
+	if = {
+		limit = {
+			has_country_flag = DAI_dc_posture_bootstrap
+			is_major = yes
+			check_variable = { DAI_dc_target_civs < 30 }
+		}
+		set_variable = { var = DAI_dc_target_civs value = 30 }
+	}
+	if = {
+		limit = {
+			has_country_flag = DAI_dc_posture_mobilizing
+			check_variable = { DAI_dc_target_mils < 18 }
+		}
+		set_variable = { var = DAI_dc_target_mils value = 18 }
+	}
+	if = {
+		limit = {
+			has_country_flag = DAI_dc_posture_wartime
+			check_variable = { DAI_dc_target_mils < 35 }
+		}
+		set_variable = { var = DAI_dc_target_mils value = 35 }
+	}
+
+	round_variable = DAI_dc_target_civs
+	round_variable = DAI_dc_target_mils
+
+	if = {
+		limit = { check_variable = { DAI_dc_target_civs < 17 } }
+		set_country_flag = DAI_dc_target_civ_16
+	}
+	else_if = {
+		limit = { check_variable = { DAI_dc_target_civs < 31 } }
+		set_country_flag = DAI_dc_target_civ_30
+	}
+	else_if = {
+		limit = { check_variable = { DAI_dc_target_civs < 46 } }
+		set_country_flag = DAI_dc_target_civ_45
+	}
+	else_if = {
+		limit = { check_variable = { DAI_dc_target_civs < 71 } }
+		set_country_flag = DAI_dc_target_civ_70
+	}
+	else_if = {
+		limit = { check_variable = { DAI_dc_target_civs < 96 } }
+		set_country_flag = DAI_dc_target_civ_95
+	}
+	else_if = {
+		limit = { check_variable = { DAI_dc_target_civs < 131 } }
+		set_country_flag = DAI_dc_target_civ_130
+	}
+	else = {
+		set_country_flag = DAI_dc_target_civ_180
+	}
+
+	if = {
+		limit = { check_variable = { DAI_dc_target_mils < 7 } }
+		set_country_flag = DAI_dc_target_mil_6
+	}
+	else_if = {
+		limit = { check_variable = { DAI_dc_target_mils < 19 } }
+		set_country_flag = DAI_dc_target_mil_18
+	}
+	else_if = {
+		limit = { check_variable = { DAI_dc_target_mils < 36 } }
+		set_country_flag = DAI_dc_target_mil_35
+	}
+	else_if = {
+		limit = { check_variable = { DAI_dc_target_mils < 61 } }
+		set_country_flag = DAI_dc_target_mil_60
+	}
+	else_if = {
+		limit = { check_variable = { DAI_dc_target_mils < 101 } }
+		set_country_flag = DAI_dc_target_mil_100
+	}
+	else_if = {
+		limit = { check_variable = { DAI_dc_target_mils < 161 } }
+		set_country_flag = DAI_dc_target_mil_160
+	}
+	else = {
+		set_country_flag = DAI_dc_target_mil_240
+	}
+}
+
+DAI_dynamic_construction_debug_log = {
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = DAI_dc_debug
+				has_country_flag = DAI_dc_profile_debug
+			}
+		}
+		log = "[GetDateText] DAI construction [ROOT.GetName]: civ [?DAI_dc_current_civs] mil [?DAI_dc_current_mils] ratio [?DAI_dc_target_civ_ratio]/[?DAI_dc_target_mil_ratio] targets [?DAI_dc_target_civs]/[?DAI_dc_target_mils] pressure war [?DAI_dc_war_pressure] resource [?DAI_dc_resource_pressure]"
+	}
+}
+
+DAI_dynamic_construction_monthly_update = {
+	DAI_dynamic_construction_clear_flags = yes
+	DAI_dynamic_construction_apply_game_rule_profile = yes
+
+	set_variable = { DAI_dc_current_civs = num_of_civilian_factories }
+	set_variable = { DAI_dc_current_mils = num_of_military_factories }
+	set_variable = { DAI_dc_current_refs = synthetic_refinery }
+	set_variable = { DAI_dc_current_silos = fuel_silo }
+	set_variable = { DAI_dc_resource_pressure = 0 }
+	set_variable = { DAI_dc_war_pressure = 0 }
+
+	if = {
+		limit = { DAI_dc_bootstrap_posture = yes }
+		set_country_flag = DAI_dc_posture_bootstrap
+		set_country_flag = DAI_dc_civ_foundation
+		add_to_variable = { DAI_dc_war_pressure = -1 }
+	}
+
+	if = {
+		limit = {
+			DAI_dc_growth_posture = yes
+			NOT = { has_country_flag = DAI_dc_posture_bootstrap }
+			NOT = { DAI_dc_recovery_posture = yes }
+			NOT = { DAI_dc_mobilizing_posture = yes }
+			NOT = { DAI_dc_wartime_posture = yes }
+		}
+		set_country_flag = DAI_dc_posture_growth
+		set_country_flag = DAI_dc_civ_growth
+		add_to_variable = { DAI_dc_war_pressure = -1 }
+	}
+
+	if = {
+		limit = {
+			DAI_dc_recovery_posture = yes
+			NOT = { has_country_flag = DAI_dc_posture_bootstrap }
+			NOT = { DAI_dc_mobilizing_posture = yes }
+		}
+		set_country_flag = DAI_dc_posture_recovery
+		set_country_flag = DAI_dc_civ_recovery
+	}
+
+	if = {
+		limit = {
+			DAI_dc_postwar_rebuild_pressure = yes
+			NOT = { has_country_flag = DAI_dc_posture_bootstrap }
+			NOT = { DAI_dc_mobilizing_posture = yes }
+			NOT = { DAI_dc_wartime_posture = yes }
+		}
+		set_country_flag = DAI_dc_postwar_rebuild
+		set_country_flag = DAI_dc_posture_recovery
+		set_country_flag = DAI_dc_civ_recovery
+	}
+
+	if = {
+		limit = {
+			DAI_dc_mobilizing_posture = yes
+			NOT = { has_country_flag = DAI_dc_posture_bootstrap }
+			NOT = { has_country_flag = DAI_dc_posture_recovery }
+		}
+		set_country_flag = DAI_dc_posture_mobilizing
+		set_country_flag = DAI_dc_mil_prepare
+		add_to_variable = { DAI_dc_war_pressure = 1 }
+	}
+
+	if = {
+		limit = {
+			DAI_dc_wartime_posture = yes
+			NOT = { has_country_flag = DAI_dc_posture_bootstrap }
+		}
+		set_country_flag = DAI_dc_posture_wartime
+		set_country_flag = DAI_dc_mil_war
+		add_to_variable = { DAI_dc_war_pressure = 2 }
+	}
+
+	if = {
+		limit = { DAI_dc_defensive_crisis = yes }
+		set_country_flag = DAI_dc_posture_crisis
+		set_country_flag = DAI_dc_mil_crisis
+		add_to_variable = { DAI_dc_war_pressure = 3 }
+	}
+
+	DAI_dynamic_construction_set_industry_targets = yes
+
+	if = {
+		limit = {
+			DAI_dc_refinery_pressure = yes
+			synthetic_refinery < 3
+		}
+		set_country_flag = DAI_dc_refinery_low
+		add_to_variable = { DAI_dc_resource_pressure = 1 }
+	}
+
+	if = {
+		limit = {
+			DAI_dc_refinery_medium_pressure = yes
+			synthetic_refinery < 7
+		}
+		set_country_flag = DAI_dc_refinery_medium
+		add_to_variable = { DAI_dc_resource_pressure = 2 }
+	}
+
+	if = {
+		limit = {
+			DAI_dc_refinery_high_pressure = yes
+			synthetic_refinery < 12
+		}
+		set_country_flag = DAI_dc_refinery_high
+		add_to_variable = { DAI_dc_resource_pressure = 3 }
+	}
+
+	if = {
+		limit = {
+			DAI_dc_fuel_silo_pressure = yes
+			fuel_silo < 1
+		}
+		set_country_flag = DAI_dc_fuel_silo_low
+	}
+
+	if = {
+		limit = {
+			num_of_military_factories > 130
+			DAI_dc_fuel_silo_pressure = yes
+			fuel_silo < 3
+			has_war = yes
+		}
+		set_country_flag = DAI_dc_fuel_silo_high
+	}
+
+	if = {
+		limit = { DAI_dc_airbase_pressure = yes }
+		set_country_flag = DAI_dc_airbase_support
+	}
+
+	if = {
+		limit = { DAI_dc_aa_pressure = yes }
+		set_country_flag = DAI_dc_aa_support
+	}
+
+	if = {
+		limit = { DAI_dc_infrastructure_pressure = yes }
+		set_country_flag = DAI_dc_infra_support
+	}
+
+	if = {
+		limit = { DAI_dc_resource_infrastructure_pressure = yes }
+		set_country_flag = DAI_dc_resource_infra_support
+	}
+
+	if = {
+		limit = { DAI_dc_logistics_emergency = yes }
+		set_country_flag = DAI_dc_supply_support
+	}
+
+	if = {
+		limit = { DAI_dc_fortification_pressure = yes }
+		set_country_flag = DAI_dc_defense_support
+	}
+
+	if = {
+		limit = {
+			DAI_dc_fortification_pressure = yes
+			surrender_progress > 0.30
+			is_major = yes
+		}
+		set_country_flag = DAI_dc_coastal_support
+	}
+
+	if = {
+		limit = {
+			DAI_dc_late_strength = yes
+			OR = {
+				land_facility < 1
+				air_facility < 1
+			}
+		}
+		set_country_flag = DAI_dc_special_facilities
+	}
+
+	if = {
+		limit = {
+			DAI_dc_late_strength = yes
+			num_of_civilian_factories > 90
+			num_of_military_factories > 90
+			OR = {
+				nuclear_facility < 1
+				nuclear_reactor < 1
+			}
+		}
+		set_country_flag = DAI_dc_nuclear_facilities
+	}
+
+	DAI_dynamic_construction_debug_log = yes
+	DAI_dynamic_construction_support_update = yes
+}
+
+DAI_dynamic_construction_support_update = {
+	if = {
+		limit = {
+			has_country_flag = DAI_dc_airbase_support
+			NOT = { has_country_flag = DAI_dc_airbase_support_cooldown }
+		}
+		random_controlled_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				air_base < 3
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			add_building_construction = {
+				type = air_base
+				level = 1
+			}
+			ROOT = {
+				set_country_flag = DAI_dc_airbase_support_queued
+				set_country_flag = { flag = DAI_dc_airbase_support_cooldown value = 1 days = 150 }
+				if = {
+					limit = {
+						OR = {
+							has_country_flag = DAI_dc_debug
+							has_country_flag = DAI_dc_profile_debug
+						}
+					}
+					log = "[GetDateText] DAI construction [ROOT.GetName]: queued frontline air base in [THIS.GetName]"
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { has_country_flag = DAI_dc_airbase_support_queued } }
+			random_controlled_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					air_base < 6
+					any_neighbor_state = {
+						controller = {
+							has_war_with = ROOT
+						}
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 1
+				}
+				ROOT = {
+					set_country_flag = DAI_dc_airbase_support_queued
+					set_country_flag = { flag = DAI_dc_airbase_support_cooldown value = 1 days = 180 }
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DAI_dc_aa_support
+			NOT = { has_country_flag = DAI_dc_aa_support_cooldown }
+		}
+		random_controlled_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				anti_air_building < 2
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			add_building_construction = {
+				type = anti_air_building
+				level = 1
+			}
+			ROOT = {
+				set_country_flag = DAI_dc_aa_support_queued
+				set_country_flag = { flag = DAI_dc_aa_support_cooldown value = 1 days = 150 }
+				if = {
+					limit = {
+						OR = {
+							has_country_flag = DAI_dc_debug
+							has_country_flag = DAI_dc_profile_debug
+						}
+					}
+					log = "[GetDateText] DAI construction [ROOT.GetName]: queued frontline AA in [THIS.GetName]"
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { has_country_flag = DAI_dc_aa_support_queued } }
+			random_controlled_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					anti_air_building < 2
+					is_coastal = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+				}
+				ROOT = {
+					set_country_flag = DAI_dc_aa_support_queued
+					set_country_flag = { flag = DAI_dc_aa_support_cooldown value = 1 days = 180 }
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DAI_dc_infra_support
+			NOT = { has_country_flag = DAI_dc_infra_support_cooldown }
+		}
+		random_controlled_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				infrastructure < 3
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+			}
+			ROOT = {
+				set_country_flag = DAI_dc_infra_support_queued
+				set_country_flag = { flag = DAI_dc_infra_support_cooldown value = 1 days = 180 }
+				if = {
+					limit = {
+						OR = {
+							has_country_flag = DAI_dc_debug
+							has_country_flag = DAI_dc_profile_debug
+						}
+					}
+					log = "[GetDateText] DAI construction [ROOT.GetName]: queued frontline infrastructure in [THIS.GetName]"
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { has_country_flag = DAI_dc_infra_support_queued } }
+			random_controlled_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					infrastructure < 4
+					any_neighbor_state = {
+						controller = {
+							has_war_with = ROOT
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+				ROOT = {
+					set_country_flag = DAI_dc_infra_support_queued
+					set_country_flag = { flag = DAI_dc_infra_support_cooldown value = 1 days = 210 }
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DAI_dc_resource_infra_support
+			NOT = { has_country_flag = DAI_dc_resource_infra_support_cooldown }
+		}
+		random_controlled_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				infrastructure < 5
+				OR = {
+					has_resources_amount = { resource = steel amount > 6 }
+					has_resources_amount = { resource = aluminium amount > 4 }
+					has_resources_amount = { resource = tungsten amount > 3 }
+					has_resources_amount = { resource = chromium amount > 3 }
+				}
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+			}
+			ROOT = {
+				set_country_flag = DAI_dc_resource_infra_support_queued
+				set_country_flag = { flag = DAI_dc_resource_infra_support_cooldown value = 1 days = 300 }
+				if = {
+					limit = {
+						OR = {
+							has_country_flag = DAI_dc_debug
+							has_country_flag = DAI_dc_profile_debug
+						}
+					}
+					log = "[GetDateText] DAI construction [ROOT.GetName]: queued resource infrastructure in [THIS.GetName]"
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DAI_dc_supply_support
+			NOT = { has_country_flag = DAI_dc_logistics_support_cooldown }
+		}
+		random_controlled_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				infrastructure < 3
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+			}
+			ROOT = {
+				set_country_flag = DAI_dc_logistics_support_queued
+				set_country_flag = { flag = DAI_dc_logistics_support_cooldown value = 1 days = 240 }
+				if = {
+					limit = {
+						OR = {
+							has_country_flag = DAI_dc_debug
+							has_country_flag = DAI_dc_profile_debug
+						}
+					}
+					log = "[GetDateText] DAI construction [ROOT.GetName]: queued logistics infrastructure in [THIS.GetName]"
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { has_country_flag = DAI_dc_logistics_support_queued } }
+			random_controlled_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					infrastructure < 5
+					any_neighbor_state = {
+						controller = {
+							has_war_with = ROOT
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+				ROOT = {
+					set_country_flag = DAI_dc_logistics_support_queued
+					set_country_flag = { flag = DAI_dc_logistics_support_cooldown value = 1 days = 300 }
+				}
+			}
+		}
+	}
+}

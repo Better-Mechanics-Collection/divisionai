@@ -182,8 +182,8 @@ mechanized_transition_bridge = {
 
 make_nukes = {
 	enable = {
-		has_tech = nuclear_reactor
-		num_of_civilian_factories > 50
+		has_country_flag = DAI_dc_nuclear_facilities
+		has_war = no
 	}
 
 	abort_when_not_enabled = yes
@@ -191,7 +191,7 @@ make_nukes = {
 	ai_strategy = {
 		type = building_target
 		id = nuclear_reactor 
-		value = 5
+		value = 1
 	}
 }
 
