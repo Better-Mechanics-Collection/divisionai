@@ -32,6 +32,7 @@ DAI_dynamic_construction_clear_flags = {
 	clr_country_flag = DAI_dc_refinery_low
 	clr_country_flag = DAI_dc_refinery_medium
 	clr_country_flag = DAI_dc_refinery_high
+	clr_country_flag = DAI_dc_refinery_overdrive
 	clr_country_flag = DAI_dc_fuel_silo_low
 	clr_country_flag = DAI_dc_fuel_silo_high
 	clr_country_flag = DAI_dc_airbase_support
@@ -43,11 +44,29 @@ DAI_dynamic_construction_clear_flags = {
 	clr_country_flag = DAI_dc_coastal_support
 	clr_country_flag = DAI_dc_special_facilities
 	clr_country_flag = DAI_dc_nuclear_facilities
+	clr_country_flag = DAI_dc_priority_resource
+	clr_country_flag = DAI_dc_priority_fuel
+	clr_country_flag = DAI_dc_priority_defense
+	clr_country_flag = DAI_dc_priority_support
+	clr_country_flag = DAI_dc_priority_normal_industry
 	clr_country_flag = DAI_dc_airbase_support_queued
 	clr_country_flag = DAI_dc_aa_support_queued
 	clr_country_flag = DAI_dc_infra_support_queued
 	clr_country_flag = DAI_dc_resource_infra_support_queued
 	clr_country_flag = DAI_dc_logistics_support_queued
+	clr_country_flag = DAI_dc_core_civ_queued
+	clr_country_flag = DAI_dc_core_civ_extra_queued
+	clr_country_flag = DAI_dc_core_mil_queued
+	clr_country_flag = DAI_dc_core_mil_extra_queued
+	clr_country_flag = DAI_dc_core_mil_emergency_queued
+	clr_country_flag = DAI_dc_core_refinery_queued
+	clr_country_flag = DAI_dc_core_refinery_extra_queued
+	clr_country_flag = DAI_dc_core_refinery_overdrive_queued
+	clr_country_flag = DAI_dc_core_silo_queued
+	clr_country_flag = DAI_dc_core_silo_extra_queued
+	clr_country_flag = DAI_dc_grid_queue_queued
+	clr_country_flag = DAI_dc_commercial_nuclear_queue_queued
+	clr_country_flag = DAI_dc_fantasy_airbase_queue_queued
 }
 
 DAI_dynamic_construction_apply_game_rule_profile = {
@@ -81,6 +100,70 @@ DAI_dynamic_construction_apply_game_rule_profile = {
 	}
 }
 
+DAI_dynamic_construction_calculate_resource_status = {
+	set_variable = { var = DAI_dc_oil_balance value = resource@oil }
+	set_variable = { var = DAI_dc_oil_imports value = resource_imported@oil }
+	set_variable = { var = DAI_dc_oil_domestic_balance value = DAI_dc_oil_balance }
+	subtract_from_variable = { DAI_dc_oil_domestic_balance = DAI_dc_oil_imports }
+	set_variable = { var = DAI_dc_oil_domestic_gap value = 0 }
+	if = {
+		limit = { check_variable = { DAI_dc_oil_domestic_balance < 0 } }
+		set_variable = { var = DAI_dc_oil_domestic_gap value = DAI_dc_oil_domestic_balance }
+		multiply_variable = { DAI_dc_oil_domestic_gap = -1 }
+	}
+	if = {
+		limit = { check_variable = { DAI_dc_oil_balance < 0 } }
+		set_variable = { var = DAI_dc_oil_deficit value = DAI_dc_oil_balance }
+		multiply_variable = { DAI_dc_oil_deficit = -1 }
+		set_variable = { var = DAI_dc_oil_surplus value = 0 }
+		set_variable = { var = DAI_dc_oil_status value = 1 }
+	}
+	else_if = {
+		limit = { check_variable = { var = DAI_dc_oil_domestic_balance value = 0 compare = greater_than_or_equals } }
+		set_variable = { var = DAI_dc_oil_surplus value = DAI_dc_oil_balance }
+		set_variable = { var = DAI_dc_oil_deficit value = 0 }
+		set_variable = { var = DAI_dc_oil_status value = 2 }
+	}
+	else = {
+		set_variable = { var = DAI_dc_oil_surplus value = DAI_dc_oil_balance }
+		set_variable = { var = DAI_dc_oil_deficit value = 0 }
+		set_variable = { var = DAI_dc_oil_status value = 3 }
+	}
+
+	set_variable = { var = DAI_dc_rubber_balance value = resource@rubber }
+	set_variable = { var = DAI_dc_rubber_imports value = resource_imported@rubber }
+	set_variable = { var = DAI_dc_rubber_domestic_balance value = DAI_dc_rubber_balance }
+	subtract_from_variable = { DAI_dc_rubber_domestic_balance = DAI_dc_rubber_imports }
+	set_variable = { var = DAI_dc_rubber_domestic_gap value = 0 }
+	if = {
+		limit = { check_variable = { DAI_dc_rubber_domestic_balance < 0 } }
+		set_variable = { var = DAI_dc_rubber_domestic_gap value = DAI_dc_rubber_domestic_balance }
+		multiply_variable = { DAI_dc_rubber_domestic_gap = -1 }
+	}
+	if = {
+		limit = { check_variable = { DAI_dc_rubber_balance < 0 } }
+		set_variable = { var = DAI_dc_rubber_deficit value = DAI_dc_rubber_balance }
+		multiply_variable = { DAI_dc_rubber_deficit = -1 }
+		set_variable = { var = DAI_dc_rubber_surplus value = 0 }
+		set_variable = { var = DAI_dc_rubber_status value = 1 }
+	}
+	else_if = {
+		limit = { check_variable = { var = DAI_dc_rubber_domestic_balance value = 0 compare = greater_than_or_equals } }
+		set_variable = { var = DAI_dc_rubber_surplus value = DAI_dc_rubber_balance }
+		set_variable = { var = DAI_dc_rubber_deficit value = 0 }
+		set_variable = { var = DAI_dc_rubber_status value = 2 }
+	}
+	else = {
+		set_variable = { var = DAI_dc_rubber_surplus value = DAI_dc_rubber_balance }
+		set_variable = { var = DAI_dc_rubber_deficit value = 0 }
+		set_variable = { var = DAI_dc_rubber_status value = 3 }
+	}
+
+	set_variable = { var = DAI_dc_strategic_import_burden value = DAI_dc_oil_imports }
+	add_to_variable = { var = DAI_dc_strategic_import_burden value = DAI_dc_rubber_imports }
+	set_variable = { var = DAI_dc_strategic_domestic_gap value = DAI_dc_oil_domestic_gap }
+	add_to_variable = { var = DAI_dc_strategic_domestic_gap value = DAI_dc_rubber_domestic_gap }
+}
 DAI_dynamic_construction_set_industry_targets = {
 	set_variable = { var = DAI_dc_total_industry value = DAI_dc_current_civs }
 	add_to_variable = { var = DAI_dc_total_industry value = DAI_dc_current_mils }
@@ -146,6 +229,7 @@ DAI_dynamic_construction_set_industry_targets = {
 		add_to_variable = { DAI_dc_target_civ_ratio = -0.07 }
 		add_to_variable = { DAI_dc_target_mil_ratio = 0.07 }
 	}
+
 
 	set_variable = { var = DAI_dc_target_civs value = DAI_dc_total_industry }
 	multiply_variable = { DAI_dc_target_civs = DAI_dc_target_civ_ratio }
@@ -243,6 +327,650 @@ DAI_dynamic_construction_set_industry_targets = {
 	}
 }
 
+DAI_dynamic_construction_clear_industry_target_flags = {
+	clr_country_flag = DAI_dc_civ_foundation
+	clr_country_flag = DAI_dc_civ_growth
+	clr_country_flag = DAI_dc_civ_recovery
+	clr_country_flag = DAI_dc_mil_prepare
+	clr_country_flag = DAI_dc_mil_war
+	clr_country_flag = DAI_dc_mil_crisis
+	clr_country_flag = DAI_dc_posture_bootstrap
+	clr_country_flag = DAI_dc_posture_growth
+	clr_country_flag = DAI_dc_posture_mobilizing
+	clr_country_flag = DAI_dc_posture_wartime
+	clr_country_flag = DAI_dc_posture_crisis
+	clr_country_flag = DAI_dc_posture_recovery
+	clr_country_flag = DAI_dc_postwar_rebuild
+	clr_country_flag = DAI_dc_target_civ_16
+	clr_country_flag = DAI_dc_target_civ_30
+	clr_country_flag = DAI_dc_target_civ_45
+	clr_country_flag = DAI_dc_target_civ_70
+	clr_country_flag = DAI_dc_target_civ_95
+	clr_country_flag = DAI_dc_target_civ_130
+	clr_country_flag = DAI_dc_target_civ_180
+	clr_country_flag = DAI_dc_target_mil_6
+	clr_country_flag = DAI_dc_target_mil_18
+	clr_country_flag = DAI_dc_target_mil_35
+	clr_country_flag = DAI_dc_target_mil_60
+	clr_country_flag = DAI_dc_target_mil_100
+	clr_country_flag = DAI_dc_target_mil_160
+	clr_country_flag = DAI_dc_target_mil_240
+}
+
+DAI_dynamic_construction_set_priority_layer = {
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = DAI_dc_refinery_overdrive
+				has_country_flag = DAI_dc_refinery_high
+				has_country_flag = DAI_dc_refinery_medium
+			}
+		}
+		set_country_flag = DAI_dc_priority_resource
+	}
+
+	if = {
+		limit = {
+			NOT = { has_country_flag = DAI_dc_priority_resource }
+			has_country_flag = DAI_dc_fuel_silo_high
+		}
+		set_country_flag = DAI_dc_priority_fuel
+	}
+
+	if = {
+		limit = {
+			NOT = { has_country_flag = DAI_dc_priority_resource }
+			NOT = { has_country_flag = DAI_dc_priority_fuel }
+			has_country_flag = DAI_dc_defense_support
+		}
+		set_country_flag = DAI_dc_priority_defense
+	}
+
+	if = {
+		limit = {
+			NOT = { has_country_flag = DAI_dc_priority_resource }
+			NOT = { has_country_flag = DAI_dc_priority_fuel }
+			NOT = { has_country_flag = DAI_dc_priority_defense }
+			OR = {
+				has_country_flag = DAI_dc_airbase_support
+				has_country_flag = DAI_dc_aa_support
+				has_country_flag = DAI_dc_infra_support
+				has_country_flag = DAI_dc_resource_infra_support
+				has_country_flag = DAI_dc_supply_support
+			}
+		}
+		set_country_flag = DAI_dc_priority_support
+	}
+
+	if = {
+		limit = {
+			NOT = { has_country_flag = DAI_dc_priority_resource }
+			NOT = { has_country_flag = DAI_dc_priority_fuel }
+			NOT = { has_country_flag = DAI_dc_priority_defense }
+			NOT = { has_country_flag = DAI_dc_priority_support }
+		}
+		set_country_flag = DAI_dc_priority_normal_industry
+	}
+
+	if = {
+		limit = { has_country_flag = DAI_dc_priority_resource }
+		DAI_dynamic_construction_clear_industry_target_flags = yes
+		clr_country_flag = DAI_dc_fuel_silo_low
+		clr_country_flag = DAI_dc_fuel_silo_high
+		clr_country_flag = DAI_dc_airbase_support
+		clr_country_flag = DAI_dc_infra_support
+		clr_country_flag = DAI_dc_resource_infra_support
+		clr_country_flag = DAI_dc_supply_support
+		clr_country_flag = DAI_dc_special_facilities
+		clr_country_flag = DAI_dc_nuclear_facilities
+	}
+
+	if = {
+		limit = { has_country_flag = DAI_dc_priority_fuel }
+		DAI_dynamic_construction_clear_industry_target_flags = yes
+		clr_country_flag = DAI_dc_airbase_support
+		clr_country_flag = DAI_dc_infra_support
+		clr_country_flag = DAI_dc_resource_infra_support
+		clr_country_flag = DAI_dc_supply_support
+		clr_country_flag = DAI_dc_special_facilities
+		clr_country_flag = DAI_dc_nuclear_facilities
+	}
+
+	if = {
+		limit = { has_country_flag = DAI_dc_priority_defense }
+		clr_country_flag = DAI_dc_resource_infra_support
+		clr_country_flag = DAI_dc_special_facilities
+		clr_country_flag = DAI_dc_nuclear_facilities
+	}
+
+	if = {
+		limit = { has_country_flag = DAI_dc_priority_support }
+		clr_country_flag = DAI_dc_special_facilities
+		clr_country_flag = DAI_dc_nuclear_facilities
+	}
+}
+
+DAI_dynamic_construction_core_resource_update = {
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = DAI_dc_refinery_low
+				has_country_flag = DAI_dc_refinery_medium
+				has_country_flag = DAI_dc_refinery_high
+				has_country_flag = DAI_dc_refinery_overdrive
+			}
+			check_variable = { var = DAI_dc_current_refs value = 16 compare = less_than }
+			any_owned_state = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = synthetic_refinery
+					size > 0
+				}
+			}
+		}
+		random_owned_state = {
+			limit = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = synthetic_refinery
+					size > 0
+				}
+			}
+			add_building_construction = {
+				type = synthetic_refinery
+				level = 1
+			}
+			ROOT = {
+				set_country_flag = DAI_dc_core_refinery_queued
+				if = {
+					limit = {
+						OR = {
+							has_country_flag = DAI_dc_debug
+							has_country_flag = DAI_dc_profile_debug
+						}
+					}
+					log = "[GetDateText] DAI construction [ROOT.GetName]: queued core synthetic refinery in [PREV.GetName]"
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = DAI_dc_refinery_high
+				has_country_flag = DAI_dc_refinery_overdrive
+			}
+			check_variable = { var = DAI_dc_current_refs value = 12 compare = less_than }
+			any_owned_state = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = synthetic_refinery
+					size > 0
+				}
+			}
+		}
+		random_owned_state = {
+			limit = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = synthetic_refinery
+					size > 0
+				}
+			}
+			add_building_construction = {
+				type = synthetic_refinery
+				level = 1
+			}
+			ROOT = { set_country_flag = DAI_dc_core_refinery_extra_queued }
+		}
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DAI_dc_refinery_overdrive
+			check_variable = { var = DAI_dc_current_refs value = 16 compare = less_than }
+			any_owned_state = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = synthetic_refinery
+					size > 0
+				}
+			}
+		}
+		random_owned_state = {
+			limit = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = synthetic_refinery
+					size > 0
+				}
+			}
+			add_building_construction = {
+				type = synthetic_refinery
+				level = 1
+			}
+			ROOT = { set_country_flag = DAI_dc_core_refinery_overdrive_queued }
+		}
+	}
+
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = DAI_dc_fuel_silo_low
+				has_country_flag = DAI_dc_fuel_silo_high
+			}
+			check_variable = { var = DAI_dc_current_silos value = 3 compare = less_than }
+			any_owned_state = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = fuel_silo
+					size > 0
+				}
+			}
+		}
+		random_owned_state = {
+			limit = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = fuel_silo
+					size > 0
+				}
+			}
+			add_building_construction = {
+				type = fuel_silo
+				level = 1
+			}
+			ROOT = { set_country_flag = DAI_dc_core_silo_queued }
+		}
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DAI_dc_fuel_silo_high
+			check_variable = { var = DAI_dc_current_silos value = 3 compare = less_than }
+			any_owned_state = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = fuel_silo
+					size > 0
+				}
+			}
+		}
+		random_owned_state = {
+			limit = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = fuel_silo
+					size > 0
+				}
+			}
+			add_building_construction = {
+				type = fuel_silo
+				level = 1
+			}
+			ROOT = { set_country_flag = DAI_dc_core_silo_extra_queued }
+		}
+	}
+}
+DAI_dynamic_construction_core_industry_update = {
+	if = {
+		limit = {
+			NOT = { has_country_flag = DAI_dc_priority_resource }
+			NOT = { has_country_flag = DAI_dc_priority_fuel }
+			check_variable = { var = DAI_dc_current_civs value = DAI_dc_target_civs compare = less_than }
+			any_owned_state = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+				}
+			}
+		}
+		random_owned_state = {
+			limit = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+				}
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+			}
+			ROOT = {
+				set_country_flag = DAI_dc_core_civ_queued
+				if = {
+					limit = {
+						OR = {
+							has_country_flag = DAI_dc_debug
+							has_country_flag = DAI_dc_profile_debug
+						}
+					}
+					log = "[GetDateText] DAI construction [ROOT.GetName]: queued core civilian factory in [PREV.GetName]"
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			NOT = { has_country_flag = DAI_dc_priority_resource }
+			NOT = { has_country_flag = DAI_dc_priority_fuel }
+			OR = {
+				has_country_flag = DAI_dc_posture_bootstrap
+				has_country_flag = DAI_dc_posture_growth
+				has_country_flag = DAI_dc_posture_recovery
+				has_country_flag = DAI_dc_postwar_rebuild
+			}
+			check_variable = { var = DAI_dc_current_civs value = DAI_dc_target_civs compare = less_than }
+			any_owned_state = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+				}
+			}
+		}
+		random_owned_state = {
+			limit = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+				}
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+			}
+			ROOT = { set_country_flag = DAI_dc_core_civ_extra_queued }
+		}
+	}
+}
+DAI_dynamic_construction_calc_support_batch_size = {
+	set_variable = { var = DAI_dc_support_batch_size value = num_of_civilian_factories }
+	divide_variable = { DAI_dc_support_batch_size = 30 }
+	multiply_variable = { DAI_dc_support_batch_size = DAI_dc_support_queue_base }
+	round_variable = DAI_dc_support_batch_size
+	clamp_variable = { var = DAI_dc_support_batch_size min = 1 }
+	if = {
+		limit = { check_variable = { var = DAI_dc_support_batch_size value = DAI_dc_support_batch_cap compare = greater_than } }
+		set_variable = { var = DAI_dc_support_batch_size value = DAI_dc_support_batch_cap }
+	}
+}
+
+DAI_dynamic_construction_grid_queue_update = {
+	if = {
+		limit = {
+			has_country_flag = DAI_dc_priority_normal_industry
+			NOT = { has_country_flag = DAI_dc_priority_resource }
+			NOT = { has_country_flag = DAI_dc_priority_fuel }
+			NOT = { has_country_flag = DAI_dc_grid_queue_cooldown }
+			any_owned_state = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+				check_variable = { var = building_level@industrial_infrastructure value = 1 compare = less_than }
+				check_variable = { var = building_level@energy_infrastructure value = 1 compare = less_than }
+				OR = {
+					AND = {
+						free_building_slots = { building = industrial_infrastructure size > 0 }
+						OR = {
+							check_variable = { var = resource@oil value = 100 compare = greater_than_or_equals }
+							check_variable = { var = resource@aluminium value = 100 compare = greater_than_or_equals }
+							check_variable = { var = resource@rubber value = 100 compare = greater_than_or_equals }
+							check_variable = { var = resource@tungsten value = 100 compare = greater_than_or_equals }
+							check_variable = { var = resource@steel value = 100 compare = greater_than_or_equals }
+							check_variable = { var = resource@chromium value = 100 compare = greater_than_or_equals }
+						}
+					}
+					AND = {
+						free_building_slots = { building = energy_infrastructure size > 0 }
+						OR = {
+							AND = {
+								ROOT = { check_variable = { var = num_of_factories value = 100 compare = greater_than_or_equals } }
+								check_variable = { var = num_of_factories value = 2 compare = greater_than_or_equals }
+							}
+							AND = {
+								ROOT = { check_variable = { var = num_of_factories value = 100 compare = less_than_or_equals } }
+								check_variable = { var = num_of_factories value = 9 compare = greater_than_or_equals }
+							}
+						}
+					}
+				}
+			}
+		}
+		set_variable = { var = DAI_dc_support_queue_base value = 0.5 }
+		set_variable = { var = DAI_dc_support_batch_cap value = 3 }
+		DAI_dynamic_construction_calc_support_batch_size = yes
+		meta_effect = {
+			text = {
+				every_owned_state = {
+					random_select_amount = [BATCH_SIZE]
+					limit = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						check_variable = { var = building_level@industrial_infrastructure value = 1 compare = less_than }
+						check_variable = { var = building_level@energy_infrastructure value = 1 compare = less_than }
+						OR = {
+							AND = {
+								free_building_slots = { building = industrial_infrastructure size > 0 }
+								OR = {
+									check_variable = { var = resource@oil value = 20 compare = greater_than_or_equals }
+									check_variable = { var = resource@aluminium value = 20 compare = greater_than_or_equals }
+									check_variable = { var = resource@rubber value = 20 compare = greater_than_or_equals }
+									check_variable = { var = resource@tungsten value = 20 compare = greater_than_or_equals }
+									check_variable = { var = resource@steel value = 20 compare = greater_than_or_equals }
+									check_variable = { var = resource@chromium value = 20 compare = greater_than_or_equals }
+								}
+							}
+							AND = {
+								free_building_slots = { building = energy_infrastructure size > 0 }
+								OR = {
+									AND = {
+										ROOT = { check_variable = { var = num_of_factories value = 100 compare = greater_than_or_equals } }
+										check_variable = { var = num_of_factories value = 2 compare = greater_than_or_equals }
+									}
+									AND = {
+										ROOT = { check_variable = { var = num_of_factories value = 100 compare = less_than_or_equals } }
+										check_variable = { var = num_of_factories value = 9 compare = greater_than_or_equals }
+									}
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							free_building_slots = { building = industrial_infrastructure size > 0 }
+							OR = {
+								check_variable = { var = resource@oil value = 20 compare = greater_than_or_equals }
+								check_variable = { var = resource@aluminium value = 20 compare = greater_than_or_equals }
+								check_variable = { var = resource@rubber value = 20 compare = greater_than_or_equals }
+								check_variable = { var = resource@tungsten value = 20 compare = greater_than_or_equals }
+								check_variable = { var = resource@steel value = 20 compare = greater_than_or_equals }
+								check_variable = { var = resource@chromium value = 20 compare = greater_than_or_equals }
+							}
+						}
+						add_building_construction = { type = industrial_infrastructure level = 1 instant_build = no }
+						ROOT = {
+							set_country_flag = DAI_dc_grid_queue_queued
+							if = {
+								limit = { OR = { has_country_flag = DAI_dc_debug has_country_flag = DAI_dc_profile_debug } }
+								log = "[GetDateText] DAI construction [ROOT.GetName]: queued industrial grid in [PREV.GetName]"
+							}
+						}
+					}
+					else_if = {
+						limit = { free_building_slots = { building = energy_infrastructure size > 0 } }
+						add_building_construction = { type = energy_infrastructure level = 1 instant_build = no }
+						ROOT = {
+							set_country_flag = DAI_dc_grid_queue_queued
+							if = {
+								limit = { OR = { has_country_flag = DAI_dc_debug has_country_flag = DAI_dc_profile_debug } }
+								log = "[GetDateText] DAI construction [ROOT.GetName]: queued energy grid in [PREV.GetName]"
+							}
+						}
+					}
+				}
+			}
+			BATCH_SIZE = "[?DAI_dc_support_batch_size|.0]"
+		}
+		if = {
+			limit = { has_country_flag = DAI_dc_grid_queue_queued }
+			set_country_flag = { flag = DAI_dc_grid_queue_cooldown value = 1 days = 180 }
+		}
+	}
+}
+
+DAI_dynamic_construction_commercial_nuclear_queue_update = {
+	if = {
+		limit = {
+			has_country_flag = DAI_dc_priority_normal_industry
+			NOT = { has_country_flag = DAI_dc_priority_resource }
+			NOT = { has_country_flag = DAI_dc_priority_fuel }
+			NOT = { has_country_flag = DAI_dc_commercial_nuclear_queue_cooldown }
+			has_tech = commercial_nuclear_reactor_tech
+			num_of_available_civilian_factories > 44
+			NOT = { surrender_progress > 0.20 }
+			any_owned_state = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+				free_building_slots = { building = commercial_nuclear_reactor size > 0 }
+			}
+		}
+		set_variable = { var = DAI_dc_support_queue_base value = 1 }
+		set_variable = { var = DAI_dc_support_batch_cap value = 2 }
+		DAI_dynamic_construction_calc_support_batch_size = yes
+		meta_effect = {
+			text = {
+				every_owned_state = {
+					random_select_amount = [BATCH_SIZE]
+					limit = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						free_building_slots = { building = commercial_nuclear_reactor size > 0 }
+					}
+					add_building_construction = { type = commercial_nuclear_reactor level = 1 instant_build = no }
+					ROOT = {
+						set_country_flag = DAI_dc_commercial_nuclear_queue_queued
+						if = {
+							limit = { OR = { has_country_flag = DAI_dc_debug has_country_flag = DAI_dc_profile_debug } }
+							log = "[GetDateText] DAI construction [ROOT.GetName]: queued commercial nuclear reactor in [PREV.GetName]"
+						}
+					}
+				}
+			}
+			BATCH_SIZE = "[?DAI_dc_support_batch_size|.0]"
+		}
+		if = {
+			limit = { has_country_flag = DAI_dc_commercial_nuclear_queue_queued }
+			set_country_flag = { flag = DAI_dc_commercial_nuclear_queue_cooldown value = 1 days = 120 }
+		}
+	}
+}
+
+DAI_dynamic_construction_airbase_queue_update = {
+	set_temp_variable = { DAI_dc_deployed_fighters = num_deployed_planes_with_type@fighter }
+	set_temp_variable = { DAI_dc_stockpile_small_airframes = num_equipment@small_plane_airframe }
+	if = {
+		limit = {
+			NOT = { has_country_flag = DAI_dc_priority_resource }
+			NOT = { has_country_flag = DAI_dc_priority_fuel }
+			NOT = { has_country_flag = DAI_dc_airbase_queue_cooldown }
+			OR = {
+				has_country_flag = DAI_dc_priority_normal_industry
+				has_country_flag = DAI_dc_priority_support
+				has_country_flag = DAI_dc_priority_defense
+			}
+			check_variable = { var = DAI_dc_stockpile_small_airframes value = DAI_dc_deployed_fighters compare = greater_than }
+			check_variable = { var = DAI_dc_stockpile_small_airframes value = 2000 compare = greater_than }
+		}
+		set_variable = { var = DAI_dc_support_queue_base value = 3 }
+		set_variable = { var = DAI_dc_support_batch_cap value = 6 }
+		if = {
+			limit = { OR = { has_country_flag = DAI_dc_priority_support has_country_flag = DAI_dc_priority_defense } }
+			set_variable = { var = DAI_dc_support_batch_cap value = 3 }
+		}
+		DAI_dynamic_construction_calc_support_batch_size = yes
+		if = {
+			limit = { has_war = yes }
+			meta_effect = {
+				text = {
+					every_controlled_state = {
+						random_select_amount = [BATCH_SIZE]
+						limit = {
+							is_fully_controlled_by = ROOT
+							check_variable = { var = building_level@air_base value = 1 compare = greater_than_or_equals }
+							check_variable = { var = building_level@air_base value = 10 compare = less_than }
+							free_building_slots = { building = air_base size > 0 }
+							any_neighbor_state = { controller = { has_war_with = ROOT } }
+						}
+						add_building_construction = { type = air_base level = 1 instant_build = no }
+						ROOT = {
+							set_country_flag = DAI_dc_fantasy_airbase_queue_queued
+							if = {
+								limit = { OR = { has_country_flag = DAI_dc_debug has_country_flag = DAI_dc_profile_debug } }
+								log = "[GetDateText] DAI construction [ROOT.GetName]: queued stockpile-driven frontline air base in [PREV.GetName]"
+							}
+						}
+					}
+				}
+				BATCH_SIZE = "[?DAI_dc_support_batch_size|.0]"
+			}
+		}
+		if = {
+			limit = { NOT = { has_country_flag = DAI_dc_fantasy_airbase_queue_queued } }
+			meta_effect = {
+				text = {
+					every_owned_state = {
+						random_select_amount = [BATCH_SIZE]
+						limit = {
+							is_core_of = ROOT
+							is_controlled_by = ROOT
+							check_variable = { var = building_level@air_base value = 1 compare = greater_than_or_equals }
+							check_variable = { var = building_level@air_base value = 10 compare = less_than }
+							free_building_slots = { building = air_base size > 0 }
+						}
+						add_building_construction = { type = air_base level = 1 instant_build = no }
+						ROOT = {
+							set_country_flag = DAI_dc_fantasy_airbase_queue_queued
+							if = {
+								limit = { OR = { has_country_flag = DAI_dc_debug has_country_flag = DAI_dc_profile_debug } }
+								log = "[GetDateText] DAI construction [ROOT.GetName]: queued stockpile-driven core air base in [PREV.GetName]"
+							}
+						}
+					}
+				}
+				BATCH_SIZE = "[?DAI_dc_support_batch_size|.0]"
+			}
+		}
+		if = {
+			limit = { has_country_flag = DAI_dc_fantasy_airbase_queue_queued }
+			set_country_flag = { flag = DAI_dc_airbase_queue_cooldown value = 1 days = 90 }
+		}
+	}
+}
+
+DAI_dynamic_construction_fantasy_support_queue_update = {
+	DAI_dynamic_construction_grid_queue_update = yes
+	DAI_dynamic_construction_commercial_nuclear_queue_update = yes
+	DAI_dynamic_construction_airbase_queue_update = yes
+}
 DAI_dynamic_construction_debug_log = {
 	if = {
 		limit = {
@@ -251,7 +979,7 @@ DAI_dynamic_construction_debug_log = {
 				has_country_flag = DAI_dc_profile_debug
 			}
 		}
-		log = "[GetDateText] DAI construction [ROOT.GetName]: civ [?DAI_dc_current_civs] mil [?DAI_dc_current_mils] ratio [?DAI_dc_target_civ_ratio]/[?DAI_dc_target_mil_ratio] targets [?DAI_dc_target_civs]/[?DAI_dc_target_mils] pressure war [?DAI_dc_war_pressure] resource [?DAI_dc_resource_pressure]"
+		log = "[GetDateText] DAI construction [ROOT.GetName]: civ [?DAI_dc_current_civs] mil [?DAI_dc_current_mils] ratio [?DAI_dc_target_civ_ratio]/[?DAI_dc_target_mil_ratio] targets [?DAI_dc_target_civs]/[?DAI_dc_target_mils] pressure war [?DAI_dc_war_pressure] resource [?DAI_dc_resource_pressure] oil status [?DAI_dc_oil_status] deficit [?DAI_dc_oil_deficit] imports [?DAI_dc_oil_imports] rubber status [?DAI_dc_rubber_status] deficit [?DAI_dc_rubber_deficit] imports [?DAI_dc_rubber_imports]"
 	}
 }
 
@@ -265,6 +993,7 @@ DAI_dynamic_construction_monthly_update = {
 	set_variable = { DAI_dc_current_silos = fuel_silo }
 	set_variable = { DAI_dc_resource_pressure = 0 }
 	set_variable = { DAI_dc_war_pressure = 0 }
+	DAI_dynamic_construction_calculate_resource_status = yes
 
 	if = {
 		limit = { DAI_dc_bootstrap_posture = yes }
@@ -367,6 +1096,15 @@ DAI_dynamic_construction_monthly_update = {
 
 	if = {
 		limit = {
+			DAI_dc_refinery_overdrive_pressure = yes
+			synthetic_refinery < 16
+		}
+		set_country_flag = DAI_dc_refinery_overdrive
+		add_to_variable = { DAI_dc_resource_pressure = 4 }
+	}
+
+	if = {
+		limit = {
 			DAI_dc_fuel_silo_pressure = yes
 			fuel_silo < 1
 		}
@@ -446,6 +1184,10 @@ DAI_dynamic_construction_monthly_update = {
 		set_country_flag = DAI_dc_nuclear_facilities
 	}
 
+	DAI_dynamic_construction_set_priority_layer = yes
+	DAI_dynamic_construction_core_resource_update = yes
+	DAI_dynamic_construction_core_industry_update = yes
+	DAI_dynamic_construction_fantasy_support_queue_update = yes
 	DAI_dynamic_construction_debug_log = yes
 	DAI_dynamic_construction_support_update = yes
 }
@@ -711,3 +1453,6 @@ DAI_dynamic_construction_support_update = {
 		}
 	}
 }
+
+
+
