@@ -126,6 +126,17 @@ light_aircraft_production_losing_air_war = {
 
 	ai_strategy = { type = unit_ratio id = fighter value = 20 }  # Fighter is law
 	ai_strategy = { type = unit_ratio id = cas value = -15 }
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = 50
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cas
+		value = -50
+	}
 }
 
 light_aircraft_production_winning_air_war = {
@@ -145,6 +156,17 @@ light_aircraft_production_winning_air_war = {
 
 	ai_strategy = { type = unit_ratio id = fighter value = -15 }  # Still maintain fighters
 	ai_strategy = { type = unit_ratio id = cas value = 20 }
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = -50
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cas
+		value = 50
+	}
 }
 
 # Air war dynamic production adjustments to cas-fighter ratios and other
