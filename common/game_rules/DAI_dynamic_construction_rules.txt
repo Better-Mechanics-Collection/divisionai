@@ -10,18 +10,18 @@ DAI_dynamic_construction_profile = {
 		name = "CONSERVATIVE"
 		text = "DAI_RULE_OPTION_CONSERVATIVE"
 		desc = "DAI_RULE_DYNAMIC_CONSTRUCTION_CONSERVATIVE_DESC"
-		allow_achievements = no
+		allow_achievements = yes
 	}
 	option = {
 		name = "AGGRESSIVE"
 		text = "DAI_RULE_OPTION_AGGRESSIVE"
 		desc = "DAI_RULE_DYNAMIC_CONSTRUCTION_AGGRESSIVE_DESC"
-		allow_achievements = no
+		allow_achievements = yes
 	}
 	option = {
 		name = "DEBUG"
 		text = "DAI_RULE_OPTION_DEBUG"
 		desc = "DAI_RULE_DYNAMIC_CONSTRUCTION_DEBUG_DESC"
-		allow_achievements = no
+		allow_achievements = yes
 	}
 }
