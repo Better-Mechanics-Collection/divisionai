@@ -23,6 +23,12 @@ light_aircraft_production = {
     ai_strategy = { type = unit_ratio id = fighter value = 60 }
     ai_strategy = { type = unit_ratio id = cas value = 20 }
     ai_strategy = { type = air_factory_balance value = 65 }
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = 25
+	}
 }
 
 tac_bomber_production_default = {
@@ -31,6 +37,12 @@ tac_bomber_production_default = {
 
     ai_strategy = { type = unit_ratio id = tactical_bomber value = 20 }
     ai_strategy = { type = unit_ratio id = cas value = -5 }
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = 25
+	}
 }
 
 # Operational Integrity -> TAC-dominant with STRAT support
@@ -55,6 +67,12 @@ strat_bomber_air_production_default = {
     ai_strategy = { type = unit_ratio id = strategic_bomber value = 10 }
     ai_strategy = { type = unit_ratio id = fighter value = -5 }
     ai_strategy = { type = unit_ratio id = heavy_fighter value = 75 }
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = 25
+	}
 }
 
 # Strategic Destruction -> STRAT-dominant with CAS support
