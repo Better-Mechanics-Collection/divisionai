@@ -13,10 +13,6 @@ tank_destroyer = {
 			is_eligible_for_improved_heavy_armor_production = no
 		}
 		modifier = {
-			date < 1942.1.1
-			factor = 0
-		}
-		modifier = {
 			factor = 0
 			NOT = { has_tech = mechanised_infantry }
 		}
