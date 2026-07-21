@@ -172,6 +172,58 @@ light_aircraft_production_winning_air_war = {
 	}
 }
 
+light_aircraft_production_air_war_lost = {
+	enable = {
+		is_eligible_for_light_aircraft_production = yes
+		has_war = yes
+		any_enemy_country = { is_major = yes }
+		has_red_air = yes
+		the_air_force_is_dead_jim = yes
+	}
+	abort = {
+		OR = {
+			has_green_air = yes
+			has_yellow_air = yes
+		}
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cas
+		value = -100
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = tactical_bomber
+		value = -100
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = strategic_bomber
+		value = -100
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = naval_bomber
+		value = -100
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = maritime_patrol_plane
+		value = -100
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = air_transport
+		value = -100
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = scout_plane
+		value = -100
+	}
+}
+
 # Air war dynamic production adjustments to cas-fighter ratios and other
 aNCFO_AI_cas_air_prod_2 = {
 	enable = {
