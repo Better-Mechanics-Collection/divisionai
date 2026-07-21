@@ -47,7 +47,7 @@ DAI_dc_military_manpower_pressure = {
 }
 
 DAI_dc_equipment_pressure = {
-	has_equipment = { infantry_equipment < 0 }
+	has_equipment = { infantry_equipment < 1 }
 }
 
 DAI_dc_enemy_pressure = {
@@ -65,7 +65,7 @@ DAI_dc_defensive_crisis = {
 	OR = {
 		surrender_progress > 0.12
 		enemies_strength_ratio > 1.20
-		has_equipment = { infantry_equipment < -5000 }
+		has_equipment = { infantry_equipment < 1 }
 	}
 }
 

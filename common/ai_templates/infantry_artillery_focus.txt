@@ -54,6 +54,10 @@ firepower_infantry = {
 			support = {
 				artillery = 1
 			}
+
+			regimental_support = {
+				fire_support = 1
+			}
 		}
 	}
 
@@ -80,8 +84,14 @@ firepower_infantry = {
 
 			support = {
 				artillery = 1
-				anti_air = 1
 				engineer = 1
+				logistics_company = 1
+			}
+
+			regimental_support = {
+				fire_support = 1
+				field_guns = 1
+				anti_air_battery = 1
 			}
 		}
 	}
@@ -107,17 +117,24 @@ firepower_infantry = {
 
 		target_template = {
 			regiments = {
-				infantry = 10
+				infantry = 12
 				artillery_brigade = 2
 				anti_tank_brigade = 1
 			}
 
 			support = {
- 				artillery = 1
-				anti_air = 1
+				artillery = 1
 				engineer = 1
 				field_hospital = 1
-                signal_company = 1
+				signal_company = 1
+				logistics_company = 1
+			}
+
+			regimental_support = {
+				fire_support = 1
+				field_guns = 2
+				anti_air_battery = 1
+				anti_tank_battery = 1
 			}
 		}
 	}
@@ -152,11 +169,18 @@ firepower_infantry = {
 			}
 
 			support = {
- 				artillery = 1
-				anti_air = 1
+				artillery = 1
 				engineer = 1
 				field_hospital = 1
-                signal_company = 1
+				signal_company = 1
+				logistics_company = 1
+			}
+
+			regimental_support = {
+				fire_support = 1
+				field_guns = 2
+				anti_air_battery = 1
+				anti_tank_battery = 1
 			}
 		}
 	}
@@ -202,15 +226,21 @@ firepower_infantry = {
 			regiments = {
 				infantry = 9
 				artillery_brigade = 2
-                medium_sp_anti_air_brigade = 1
+				medium_sp_anti_air_brigade = 1
 			}
 
 			support = {
- 				artillery = 1
-				anti_tank = 1
+				artillery = 1
 				engineer = 1
 				field_hospital = 1
-                signal_company = 1
+				signal_company = 1
+				logistics_company = 1
+			}
+
+			regimental_support = {
+				fire_support = 1
+				anti_air_battery = 1
+				anti_tank_battery = 1
 			}
 		}
 	}
@@ -259,15 +289,22 @@ firepower_infantry = {
 			regiments = {
 				infantry = 12
 				artillery_brigade = 3
-                medium_sp_anti_air_brigade = 1
+				medium_sp_anti_air_brigade = 1
 			}
 
 			support = {
- 				artillery = 1
-				anti_tank = 1
+				artillery = 1
 				engineer = 1
 				field_hospital = 1
-                signal_company = 1
+				signal_company = 1
+				logistics_company = 1
+			}
+
+			regimental_support = {
+				fire_support = 1
+				field_guns = 2
+				anti_air_battery = 1
+				anti_tank_battery = 1
 			}
 		}
 	}

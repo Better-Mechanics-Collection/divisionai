@@ -42,11 +42,17 @@ armour_more_tanks = {
 			}
 
 			support = {
-				anti_air = 1
 				light_tank_recon = 1
 				medium_flame_tank = 1
 				assault_engineer = 1
 				logistics_company = 1
+				maintenance_company = 1
+			}
+
+			regimental_support = {
+				mot_fire_support = 1
+				medium_tank_destroyer_support = 1
+				medium_sp_anti_air_support = 1
 			}
 		}
 	}
@@ -79,16 +85,23 @@ armour_more_tanks = {
 		target_template = {
 			regiments = {
 				medium_armor = 7
-				motorized = 7
+				motorized = 9
 				mot_artillery_brigade = 1
 			}
 
 			support = {
-				anti_air = 1
 				light_tank_recon = 1
 				medium_flame_tank = 1
 				assault_engineer = 1
 				logistics_company = 1
+				maintenance_company = 1
+			}
+
+			regimental_support = {
+				mot_fire_support = 2
+				medium_tank_destroyer_support = 1
+				medium_sp_anti_air_support = 1
+				anti_air_battery = 1
 			}
 		}
 	}
@@ -124,16 +137,23 @@ armour_more_tanks = {
 		target_template = {
 			regiments = {
 				medium_armor = 7
-				mechanized = 7
+				mechanized = 9
 				medium_sp_anti_air_brigade = 1
 			}
 
 			support = {
-				anti_air = 1
 				light_tank_recon = 1
 				medium_flame_tank = 1
 				assault_engineer = 1
 				logistics_company = 1
+				maintenance_company = 1
+			}
+
+			regimental_support = {
+				mot_fire_support = 2
+				medium_tank_destroyer_support = 1
+				medium_sp_anti_air_support = 1
+				anti_air_battery = 1
 			}
 		}
 	}
@@ -141,10 +161,7 @@ armour_more_tanks = {
 	mw_modern_armour = {
 		can_upgrade_in_field = { 
 			has_equipment = { mechanized_equipment > 10 }
-			OR = {
-				has_equipment = { modern_tank_equipment > 10 }
-				has_equipment = { modern_tank_chassis > 10 }
-			}
+			has_equipment = { modern_tank_chassis > 10 }
 		}
 		reinforce_prio = 2
 
@@ -180,16 +197,23 @@ armour_more_tanks = {
 
 		target_template = {
 			regiments = {
-				modern_armor = 8
+				modern_armor = 9
 				mechanized = 7
 			}
 
 			support = {
-				anti_air = 1
 				assault_engineer = 1
 				logistics_company = 1
 				armored_maintenance = 1
 				armored_signal = 1
+				maintenance_company = 1
+			}
+
+			regimental_support = {
+				mot_fire_support = 2
+				medium_tank_destroyer_support = 1
+				medium_sp_anti_air_support = 1
+				anti_air_battery = 1
 			}
 		}
 	}

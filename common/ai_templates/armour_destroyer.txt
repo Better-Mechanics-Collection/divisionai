@@ -47,11 +47,17 @@ tank_destroyer = {
 			}
 
 			support = {
-				anti_air = 1
 				light_tank_recon = 1
 				armored_engineer = 1
 				field_hospital = 1
 				logistics_company = 1
+				maintenance_company = 1
+			}
+
+			regimental_support = {
+				mot_fire_support = 2
+				heavy_tank_destroyer_support = 1
+				anti_air_battery = 1
 			}
 		}
     }
@@ -79,11 +85,18 @@ tank_destroyer = {
 			}
 
 			support = {
-				anti_air = 1
 				light_tank_recon = 1
 				armored_engineer = 1
 				field_hospital = 1
 				logistics_company = 1
+				maintenance_company = 1
+			}
+
+			regimental_support = {
+				mot_fire_support = 2
+				heavy_tank_destroyer_support = 1
+				medium_sp_anti_air_support = 1
+				anti_air_battery = 1
 			}
 		}
     }

@@ -39,10 +39,16 @@ light_sp_infantry = {
 
 			support = {
 				artillery = 1
-				anti_air = 1
-				anti_tank = 1
 				engineer = 1
 				field_hospital = 1
+				logistics_company = 1
+				signal_company = 1
+			}
+
+			regimental_support = {
+				fire_support = 1
+				anti_air_battery = 1
+				anti_tank_battery = 1
 			}
 		}
 	}
@@ -75,10 +81,16 @@ light_sp_infantry = {
 
 			support = {
 				artillery = 1
-				anti_air = 1
-				anti_tank = 1
 				engineer = 1
 				field_hospital = 1
+				logistics_company = 1
+				signal_company = 1
+			}
+
+			regimental_support = {
+				fire_support = 1
+				anti_air_battery = 1
+				anti_tank_battery = 1
 			}
 		}
 	}
@@ -120,6 +132,13 @@ light_sp_infantry = {
 				medium_flame_tank = 1
 				engineer = 1
 				field_hospital = 1
+			}
+
+			regimental_support = {
+				fire_support = 2
+				field_guns = 1
+				anti_air_battery = 1
+				anti_tank_battery = 1
 			}
 		}
 	}
