@@ -1,6 +1,6 @@
-######################
+####################################################################################################
 #	MOUNTAINEER ROLE
-######################
+####################################################################################################
 
 mountaineer_generic = {
 	role = mountaineer
@@ -18,6 +18,20 @@ mountaineer_generic = {
 		}
 	}
 
+	rangers_are_actually_mountaineers = {
+		can_upgrade_in_field = { always = yes }
+		
+		upgrade_prio = {
+			base = 0
+		}
+
+		target_template = {
+			regiments = {
+				ranger_battalion = 5
+			}
+		}
+	}
+
 	paratroopers_are_actually_mountaineers = {
 		can_upgrade_in_field = { always = yes }
 		
@@ -28,10 +42,6 @@ mountaineer_generic = {
 		target_template = {
 			regiments = {
 				paratrooper = 5
-			}
-
-			regimental_support = {
-				field_guns = 1
 			}
 		}
 	}
@@ -46,18 +56,20 @@ mountaineer_generic = {
 
 		target_template = {
 			regiments = {
-				mountaineers = 11
+				mountaineers = 9
 			}
 
 			support = {
 				artillery = 1
+				anti_air = 1
+				recon = 1
 				engineer = 1
-				logistics_company = 1
+				field_hospital = 1
 			}
 
 			regimental_support = {
-				field_guns = 2
-				fire_support = 1
+				fire_support = 2
+				anti_tank_battery = 1
 			}
 		}
 	}
@@ -70,10 +82,7 @@ mountaineer_generic = {
 			base = 100
 			modifier = {
 				factor = 0
-				OR = {
-					NOT = { has_subdoctrine_in_track = infantry }
-					NOT = { has_subdoctrine_in_track = operations }
-				}
+				has_three_subdoctrine_tracks = no
 			}
 			modifier = {
 				factor = 0
@@ -87,22 +96,67 @@ mountaineer_generic = {
 
 		target_template = {
 			regiments = {
-				mountaineers = 11
-				artillery_brigade = 1
+				mountaineers = 9
+				artillery_brigade = 2
 			}
 
 			support = {
 				artillery = 1
-				rangers_support = 1
+				anti_air = 1
+				recon = 1
 				engineer = 1
 				field_hospital = 1
-				logistics_company = 1
 			}
 
 			regimental_support = {
-				fire_support = 1
-				field_guns = 1
-				anti_air_battery = 1
+				fire_support = 2
+				anti_tank_battery = 1
+			}
+		}
+	}
+
+	super_mountaineer = {
+		can_upgrade_in_field = { always = yes }
+		reinforce_prio = 2
+
+		upgrade_prio = {
+			base = 100
+			modifier = {
+				factor = 0
+				NOT = { has_doctrine = mountaineers_1 }
+				NOT = { has_doctrine = mountaineers_2 }
+			}
+			modifier = {
+				factor = 0
+				has_four_subdoctrine_tracks = no
+			}
+			modifier = {
+				factor = 0
+				num_of_military_factories < 60
+			}
+			modifier = {
+				factor = 4
+				num_of_military_factories > 60
+			}
+		}
+
+		target_template = {
+			regiments = {
+				mountaineers = 12
+				artillery_brigade = 4
+			}
+
+			support = {
+				artillery = 1
+				anti_air = 1
+				rangers_support = 1
+				engineer = 1
+				field_hospital = 1
+			}
+
+			regimental_support = {
+				fire_support = 4
+				anti_tank_battery = 1
 			}
 		}
 	}
