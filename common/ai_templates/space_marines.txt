@@ -1,6 +1,6 @@
-########################
+####################################################################################################
 #	SPACE MARINE ROLE
-########################
+####################################################################################################
 
 light_sp_infantry = {
 	role = space_marine
@@ -21,6 +21,13 @@ light_sp_infantry = {
 			factor = 0
 			NOT = { has_global_flag = SpaceMarines }
 		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_doctrine = superior_firepower
+				has_doctrine = mass_assault
+			}
+		}
 	}
 
 	spg_space_marine_1 = {
@@ -39,16 +46,12 @@ light_sp_infantry = {
 
 			support = {
 				artillery = 1
+				light_tank_recon = 1
 				engineer = 1
-				field_hospital = 1
-				logistics_company = 1
-				signal_company = 1
 			}
 
 			regimental_support = {
-				fire_support = 1
-				anti_air_battery = 1
-				anti_tank_battery = 1
+				field_guns = 3
 			}
 		}
 	}
@@ -60,7 +63,7 @@ light_sp_infantry = {
 			base = 100
 			modifier = {
 				factor = 0
-				NOT = { has_subdoctrine_in_track = infantry }
+				has_two_subdoctrine_tracks = no
 			}
 			modifier = {
 				factor = 0
@@ -74,23 +77,21 @@ light_sp_infantry = {
 
 		target_template = {
 			regiments = {
-				infantry = 11
-				artillery_brigade = 2
+				infantry = 12
+				artillery_brigade = 3
 				light_sp_artillery_brigade = 1
 			}
 
 			support = {
 				artillery = 1
-				engineer = 1
+				light_tank_recon = 1
+				armored_engineer = 1
 				field_hospital = 1
-				logistics_company = 1
 				signal_company = 1
 			}
 
 			regimental_support = {
-				fire_support = 1
-				anti_air_battery = 1
-				anti_tank_battery = 1
+				field_guns = 5
 			}
 		}
 	}
@@ -99,13 +100,10 @@ light_sp_infantry = {
 		can_upgrade_in_field = { always = no }
 		
 		upgrade_prio = {
-			base = 1000
+			base = 100
 			modifier = {
 				factor = 0
-				OR = {
-					NOT = { has_subdoctrine_in_track = infantry }
-					NOT = { has_subdoctrine_in_track = operations }
-				}
+				has_four_subdoctrine_tracks = no
 			}
 			modifier = {
 				factor = 0
@@ -119,26 +117,21 @@ light_sp_infantry = {
 
 		target_template = {
 			regiments = {
-				infantry = 14
-				artillery_brigade = 2
-				anti_tank_brigade = 1
+				infantry = 13
+				artillery_brigade = 4
 				light_sp_artillery_brigade = 1
-				light_sp_anti_air_brigade = 1
 			}
 
 			support = {
 				artillery = 1
-				helicopter_brigade = 1
-				medium_flame_tank = 1
-				engineer = 1
+				light_tank_recon = 1
+				armored_engineer = 1
 				field_hospital = 1
+				signal_company = 1
 			}
 
 			regimental_support = {
-				fire_support = 2
-				field_guns = 1
-				anti_air_battery = 1
-				anti_tank_battery = 1
+				field_guns = 5
 			}
 		}
 	}
