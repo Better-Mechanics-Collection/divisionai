@@ -789,6 +789,12 @@ land_powers_make_more_mountaineers = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = role_ratio                          id = mountaineer                  value = 10 }
+
+	ai_strategy = {
+		type = template_prio
+		id = mountaineer
+		value = 50
+	}
 }
 
 default_marine_production = {
@@ -819,6 +825,12 @@ naval_powers_make_more_marines = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = role_ratio                          id = marine                     	 value = 10 }
+
+	ai_strategy = {
+		type = template_prio
+		id = marine
+		value = 50
+	}
 }
 
 ############################################################################################################
