@@ -115,11 +115,10 @@ light_aircraft_production_losing_air_war = {
 	enable = {
 		is_eligible_for_light_aircraft_production = yes
 		has_war = yes
-		any_enemy_country = {
-			has_deployed_air_force_size = {
-				size > ROOT.num_deployed_planes_with_type@small_plane_airframe
-				type = fighter
-			}
+		any_enemy_country = { is_major = yes }
+		OR = {
+			has_yellow_air = yes
+			has_red_air = yes
 		}
 	}
 	abort_when_not_enabled = yes
