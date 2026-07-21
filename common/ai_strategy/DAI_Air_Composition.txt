@@ -129,12 +129,22 @@ light_aircraft_production_losing_air_war = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = fighter
-		value = 50
+		value = 25
 	}
 	ai_strategy = {
 		type = equipment_production_factor
 		id = cas
-		value = -50
+		value = -25
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = tactical_bomber
+		value = -25
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = strategic_bomber
+		value = -25
 	}
 }
 
