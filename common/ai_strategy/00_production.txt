@@ -554,12 +554,10 @@ build_mot_army_1 = {
 		has_army_size = { size > 10 type = armor }
 		OR = {
 			AND = {
-				date < 1941.1.1
 				NOT = { has_tech = mechanised_infantry }
 				has_equipment = { motorized_equipment > 1000 }
 			}
 			AND = {
-				date > 1941.1.1
 				has_tech = mechanised_infantry
 				has_equipment = { mechanized_equipment > 1000 }
 			}
@@ -580,12 +578,10 @@ build_mot_army_2 = {
 		has_army_size = { size > 20 type = armor }
 		OR = {
 			AND = {
-				date < 1941.1.1
 				NOT = { has_tech = mechanised_infantry }
 				has_equipment = { motorized_equipment > 1000 }
 			}
 			AND = {
-				date > 1941.1.1
 				has_tech = mechanised_infantry
 				has_equipment = { mechanized_equipment > 1000 }
 			}
@@ -606,12 +602,10 @@ build_mot_army_3 = {
 		has_army_size = { size > 30 type = armor }
 		OR = {
 			AND = {
-				date < 1941.1.1
 				NOT = { has_tech = mechanised_infantry }
 				has_equipment = { motorized_equipment > 1000 }
 			}
 			AND = {
-				date > 1941.1.1
 				has_tech = mechanised_infantry
 				has_equipment = { mechanized_equipment > 1000 }
 			}
@@ -632,12 +626,10 @@ build_mot_army_4 = {
 		has_army_size = { size > 40 type = armor }
 		OR = {
 			AND = {
-				date < 1941.1.1
 				NOT = { has_tech = mechanised_infantry }
 				has_equipment = { motorized_equipment > 1000 }
 			}
 			AND = {
-				date > 1941.1.1
 				has_tech = mechanised_infantry
 				has_equipment = { mechanized_equipment > 1000 }
 			}
@@ -658,12 +650,10 @@ build_mot_army_5 = {
 		has_army_size = { size > 50 type = armor }
 		OR = {
 			AND = {
-				date < 1941.1.1
 				NOT = { has_tech = mechanised_infantry }
 				has_equipment = { motorized_equipment > 1000 }
 			}
 			AND = {
-				date > 1941.1.1
 				has_tech = mechanised_infantry
 				has_equipment = { mechanized_equipment > 1000 }
 			}
