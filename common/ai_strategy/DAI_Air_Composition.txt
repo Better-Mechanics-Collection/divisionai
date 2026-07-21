@@ -111,7 +111,7 @@ maritime_patrol_production = {
 }
 
 # Air war dynamic production priorities
-light_aircraft_production_losing_air_war = {
+light_aircraft_production_air_war_ongoing = {
 	enable = {
 		is_eligible_for_light_aircraft_production = yes
 		has_war = yes
@@ -148,7 +148,7 @@ light_aircraft_production_losing_air_war = {
 	}
 }
 
-light_aircraft_production_winning_air_war = {
+light_aircraft_production_air_war_won = {
 	enable = {
 		is_eligible_for_light_aircraft_production = yes
 		has_war = yes
