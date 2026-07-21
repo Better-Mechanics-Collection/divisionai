@@ -12,11 +12,18 @@ infantry_effort = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = role_ratio                          id = infantry                     value = 100 }
+
+	ai_strategy = {
+		type = template_prio
+		id = infantry
+		value = 100
+	}
 }
 
 shock_infantry_effort = {
 	enable = {
 		is_eligible_for_armor_production = yes
+		ai_has_role_template = infantry
 		ai_has_role_template = shock_infantry
 	}
 	abort_when_not_enabled = yes
@@ -28,24 +35,63 @@ shock_infantry_effort = {
 space_marine_effort = {
 	enable = {
 		is_eligible_for_armor_production = yes
+		ai_has_role_template = infantry
 		ai_has_role_template = space_marine
 	}
 	abort_when_not_enabled = yes
 
-	ai_strategy = { type = role_ratio                          id = infantry                   value = -30 }
-	ai_strategy = { type = role_ratio                          id = space_marine               value = 30 }
+	ai_strategy = { type = role_ratio                          id = infantry                     value = -30 }
+	ai_strategy = { type = role_ratio                          id = space_marine                 value = 30 }
+}
+
+mw_gbp_more_shock_inf = {
+	enable = {
+		is_eligible_for_armor_production = yes
+		ai_has_role_template = shock_infantry
+		ai_has_role_template = space_marine
+		OR = {
+			has_doctrine = new_mobile_warfare
+			has_doctrine = grand_battleplan
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = role_ratio                          id = shock_infantry               value = 10 }
+	ai_strategy = { type = role_ratio                          id = space_marine                 value = -10 }
+}
+
+sf_ma_more_sm = {
+	enable = {
+		is_eligible_for_armor_production = yes
+		ai_has_role_template = shock_infantry
+		ai_has_role_template = space_marine
+		OR = {
+			has_doctrine = superior_firepower
+			has_doctrine = mass_assault
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = role_ratio                          id = shock_infantry               value = -10 }
+	ai_strategy = { type = role_ratio                          id = space_marine                 value = 10 }
 }
 
 motorized_infantry_effort = {
 	enable = {
 		is_eligible_for_armor_production = yes
+		ai_has_role_template = infantry
 		ai_has_role_template = motorized
-		##NOT = { has_army_size = { size > 20 type = armor }
 	}
 	abort_when_not_enabled = yes
 
-	ai_strategy = { type = role_ratio                          id = infantry                     value = -15 }
-	ai_strategy = { type = role_ratio                          id = motorized                    value = 15 }
+	ai_strategy = { type = role_ratio                          id = infantry                     value = -10 }
+	ai_strategy = { type = role_ratio                          id = motorized                    value = 10 }
+
+	ai_strategy = {
+		type = template_prio
+		id = motorized
+		value = 25
+	}
 }
 
 mw_more_mot = {
@@ -61,7 +107,7 @@ mw_more_mot = {
 	ai_strategy = { type = role_ratio                          id = motorized                    value = 5 }
 }
 
-sp_more_shock_inf = {
+sf_more_shock_inf = {
 	enable = {
 		is_eligible_for_armor_production = yes
 		ai_has_role_template = shock_infantry
@@ -77,6 +123,7 @@ sp_more_shock_inf = {
 ma_more_inf = {
 	enable = {
 		is_eligible_for_armor_production = yes
+		ai_has_role_template = infantry
 		ai_has_role_template = shock_infantry
 		ai_has_role_template = motorized
 		has_doctrine = mass_assault
@@ -91,6 +138,7 @@ ma_more_inf = {
 mechanized_infantry_effort = {
 	enable = {
 		is_eligible_for_improved_armor_production = yes
+		ai_has_role_template = infantry
 		ai_has_role_template = shock_infantry
 		ai_has_role_template = motorized
 		ai_has_role_template = mechanized
@@ -99,8 +147,14 @@ mechanized_infantry_effort = {
 
 	ai_strategy = { type = role_ratio                          id = infantry                     value = -10 }
 	ai_strategy = { type = role_ratio                          id = shock_infantry               value = -5 }
-	ai_strategy = { type = role_ratio                          id = motorized                    value = -10 }
-	ai_strategy = { type = role_ratio                          id = mechanized               	 value = 40 }
+	ai_strategy = { type = role_ratio                          id = motorized                    value = -5 }
+	ai_strategy = { type = role_ratio                          id = mechanized               	 value = 20 }
+
+	ai_strategy = {
+		type = template_prio
+		id = mechanized
+		value = 25
+	}
 }
 
 ma_less_mech = {
@@ -112,8 +166,8 @@ ma_less_mech = {
 	}
 	abort_when_not_enabled = yes
 
-	ai_strategy = { type = role_ratio                          id = motorized                    value = 10 }
-	ai_strategy = { type = role_ratio                          id = mechanized               	 value = -10 }
+	ai_strategy = { type = role_ratio                          id = motorized                    value = 5 }
+	ai_strategy = { type = role_ratio                          id = mechanized               	 value = -5 }
 }
 
 ############################################################################################################
