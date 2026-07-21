@@ -1082,6 +1082,124 @@ naval_powers_make_more_marines = {
 #	MISC
 ######################################
 
+get_yourself_a_doctrine = {
+	enable = {
+		has_selected_a_grand_doctrine = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = unlock_doctrine
+		value = 75
+	}
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = division_template
+		value = 25
+	}
+}
+
+get_yourself_some_subdoctrines_1 = {
+	enable = {
+		has_selected_a_grand_doctrine = yes
+		has_two_subdoctrine_tracks = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = unlock_doctrine
+		value = 50
+	}
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = division_template
+		value = 25
+	}
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = equipment_variant
+		value = 25
+	}
+}
+
+get_yourself_some_subdoctrines_2 = {
+	enable = {
+		has_two_subdoctrine_tracks = yes
+		has_four_subdoctrine_tracks = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = unlock_doctrine
+		value = 25
+	}
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = division_template
+		value = 50
+	}
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = equipment_variant
+		value = 25
+	}
+}
+
+we_have_full_doctrines = {
+	enable = {
+		has_four_subdoctrine_tracks = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = division_template
+		value = 75
+	}
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = equipment_variant
+		value = 25
+	}
+}
+
+templates_are_very_important = {
+	enable = {
+		OR = {
+			has_war = yes
+			date > 1939.1.1
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = division_template
+		value = 75
+	}
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = equipment_variant
+		value = 25
+	}
+}
+
+leave_army_spirits_for_last = {
+	enable = {
+		has_three_subdoctrine_tracks = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = army_spirit
+		value = -100
+	}
+}
+
 make_trains = {
 	enable = { 
 		is_eligible_for_armor_production = yes
