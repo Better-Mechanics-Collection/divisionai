@@ -1,6 +1,6 @@
-######################
+####################################################################################################
 #	ARMOUR ROLE
-######################
+####################################################################################################
 
 armour_generic = {
 	role = armor_role #to distinguish from armor, a hardcoded keyword for all tank equipment types
@@ -28,14 +28,12 @@ armour_generic = {
 			NOT = { has_tech = basic_medium_tank }
 			NOT = { has_tech = basic_medium_tank_chassis }
 		}
-		modifier = { 
-			has_doctrine = grand_battleplan
-			factor = 0.2
-		}
 	}
 
 	motorised_medium = {
-		can_upgrade_in_field = { always = no }
+        can_upgrade_in_field = {
+			has_equipment = { mechanized_equipment > 100 }
+		}
 		reinforce_prio = 2
 
 		upgrade_prio = {
@@ -49,92 +47,43 @@ armour_generic = {
 			}
 
 			support = {
-				light_tank_recon = 1
-				assault_engineer = 1
-				field_hospital = 1
-				logistics_company = 1
-				maintenance_company = 1
-			}
-
-			regimental_support = {
-				mot_fire_support = 2
-				medium_tank_destroyer_support = 1
-				medium_sp_anti_air_support = 1
-			}
-		}
-	}
-	
-	motorised_medium_stronger = {
-		can_upgrade_in_field = { always = no }
-		reinforce_prio = 2
-
-		upgrade_prio = {
-			base = 100
-			
-			modifier = {
-				factor = 0
-				has_tech = mechanised_infantry 
-			}
-			modifier = {
-				factor = 0
-				NOT = { has_subdoctrine_in_track = infantry }
-			}
-			modifier = {
-				factor = 0
-				is_eligible_for_improved_armor_production = no
-			}
-			modifier = {
-				factor = 2
-				is_eligible_for_improved_armor_production = yes
-			}
-		}
-
-		target_template = {
-			regiments = {
-				medium_armor = 6
-				motorized = 9
-				mot_artillery_brigade = 1
-			}
-
-			support = {
+				artillery = 1
+				anti_air = 1
+				anti_tank = 1
 				medium_flame_tank = 1
-				armored_engineer = 1
-				field_hospital = 1
-				logistics_company = 1
-				maintenance_company = 1
+				engineer = 1
 			}
 
 			regimental_support = {
-				mot_fire_support = 2
-				medium_tank_destroyer_support = 1
-				medium_sp_anti_air_support = 1
-				anti_air_battery = 1
+				mot_fire_support = 4
 			}
 		}
 	}
 
-	mechanized_medium = {
-		can_upgrade_in_field = { has_equipment = { mechanized_equipment > 10 } }
+	semi_mechanized_medium_1 = {
+        can_upgrade_in_field = {
+			has_equipment = { mechanized_equipment > 100 }
+		}
 		reinforce_prio = 2
 
 		upgrade_prio = {
 			base = 100
+			modifier = {
+				date < 1940.1.1
+				factor = 0
+			}
+			modifier = {
+				date > 1940.4.1
+				factor = 0
+			}
 			modifier = {
 				factor = 0
 				NOT = { has_tech = mechanised_infantry }
 			}
 			modifier = {
 				factor = 0
-				NOT = { has_subdoctrine_in_track = infantry }
-			}
-			modifier = {
-				factor = 0
 				is_eligible_for_improved_armor_production = no
 			}
-			##modifier = {
-			##	factor = 0
-			##	has_equipment = { mechanized_equipment < 0 }	# Transition gate: don't switch until mech stock is real
-			##}
 			modifier = {
 				factor = 2
 				is_eligible_for_improved_armor_production = yes
@@ -144,33 +93,221 @@ armour_generic = {
 		target_template = {
 			regiments = {
 				medium_armor = 6
-				mechanized = 9
-				medium_sp_artillery_brigade = 1
+				motorized = 4
+				mechanized = 2
 			}
 
 			support = {
+				artillery = 1
+				anti_air = 1
+				anti_tank = 1
+				medium_flame_tank = 1
+				engineer = 1
+			}
+
+			regimental_support = {
+				mot_fire_support = 4
+			}
+		}
+	}
+
+	semi_mechanized_medium_2 = {
+        can_upgrade_in_field = {
+			has_equipment = { mechanized_equipment > 100 }
+		}
+		reinforce_prio = 2
+
+		upgrade_prio = {
+			base = 100
+			modifier = {
+				date < 1940.4.1
+				factor = 0
+			}
+			modifier = {
+				date > 1940.8.1
+				factor = 0
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_tech = mechanised_infantry }
+			}
+			modifier = {
+				factor = 0
+				is_eligible_for_improved_armor_production = no
+			}
+			modifier = {
+				factor = 2
+				is_eligible_for_improved_armor_production = yes
+			}
+		}
+
+		target_template = {
+			regiments = {
+				medium_armor = 6
+				motorized = 2
+				mechanized = 4
+			}
+
+			support = {
+				artillery = 1
+				anti_air = 1
+				anti_tank = 1
+				medium_flame_tank = 1
+				engineer = 1
+			}
+
+			regimental_support = {
+				mot_fire_support = 4
+			}
+		}
+	}
+
+	semi_mechanized_medium_3 = {
+        can_upgrade_in_field = {
+			has_equipment = { mechanized_equipment > 100 }
+		}
+		reinforce_prio = 2
+
+		upgrade_prio = {
+			base = 100
+			modifier = {
+				date < 1940.8.1
+				factor = 0
+			}
+			modifier = {
+				date > 1941.1.1
+				factor = 0
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_tech = mechanised_infantry }
+			}
+			modifier = {
+				factor = 0
+				is_eligible_for_improved_armor_production = no
+			}
+			modifier = {
+				factor = 2
+				is_eligible_for_improved_armor_production = yes
+			}
+		}
+
+		target_template = {
+			regiments = {
+				medium_armor = 6
+				mechanized = 6
+			}
+
+			support = {
+				artillery = 1
+				anti_air = 1
+				anti_tank = 1
+				medium_flame_tank = 1
+				engineer = 1
+			}
+
+			regimental_support = {
+				mot_fire_support = 4
+			}
+		}
+	}
+
+	mechanized_medium = {
+		can_upgrade_in_field = { always = no }
+		reinforce_prio = 2
+
+		upgrade_prio = {
+			base = 100
+			modifier = {
+				date < 1941.1.1
+				factor = 0
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_tech = mechanised_infantry }
+			}
+			modifier = {
+				factor = 0
+				is_eligible_for_improved_armor_production = no
+			}
+			modifier = {
+				factor = 2
+				is_eligible_for_improved_armor_production = yes
+			}
+		}
+
+		target_template = {
+			regiments = {
+				medium_armor = 6
+				mechanized = 6
+			}
+
+			support = {
+				artillery = 1
+				anti_air = 1
+				anti_tank = 1
+				medium_flame_tank = 1
+				engineer = 1
+			}
+
+			regimental_support = {
+				mot_fire_support = 4
+			}
+		}
+	}
+
+	super_mechanized_medium = {
+		can_upgrade_in_field = { always = no }
+		reinforce_prio = 2
+
+		upgrade_prio = {
+			base = 100
+			modifier = {
+				date < 1941.1.1
+				factor = 0
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_tech = mechanised_infantry }
+			}
+			modifier = {
+				factor = 0
+				has_four_subdoctrine_tracks = no
+			}
+			modifier = {
+				factor = 0
+				is_eligible_for_improved_armor_production = no
+			}
+			modifier = {
+				factor = 4
+				is_eligible_for_improved_armor_production = yes
+			}
+		}
+
+		target_template = {
+			regiments = {
+				medium_armor = 9
+				mechanized = 9
+			}
+
+			support = {
+				anti_air = 1
 				medium_flame_tank = 1
 				armored_engineer = 1
 				field_hospital = 1
 				logistics_company = 1
-				maintenance_company = 1
 			}
 
 			regimental_support = {
-				mot_fire_support = 2
-				medium_tank_destroyer_support = 1
+				medium_tank_destroyer_support = 2
 				medium_sp_anti_air_support = 1
-				anti_air_battery = 1
+				mot_fire_support = 2
 			}
 		}
 	}
 
 	modern_armour = {
-		can_upgrade_in_field = { 
-			has_equipment = { mechanized_equipment > 10 }
-			has_equipment = { modern_tank_chassis > 10 }
-		}
-		
+		can_upgrade_in_field = { always = no }
 		reinforce_prio = 2
 
 		upgrade_prio = {
@@ -186,42 +323,36 @@ armour_generic = {
 			}
 			modifier = {
 				factor = 0
-				OR = {
-					NOT = { has_subdoctrine_in_track = infantry }
-					NOT = { has_subdoctrine_in_track = combat_support }
-					NOT = { has_subdoctrine_in_track = armor }
-					NOT = { has_subdoctrine_in_track = operations }
-				}
+				has_four_subdoctrine_tracks = no
 			}
 			modifier = {
 				factor = 0
 				is_eligible_for_improved_armor_production = no
 			}
 			modifier = {
-				factor = 4
+				factor = 6
 				is_eligible_for_improved_armor_production = yes
 			}
 		}
 
 		target_template = {
 			regiments = {
-				modern_armor = 7
+				modern_armor = 9
 				mechanized = 9
 			}
 
 			support = {
+				anti_air = 1
 				armored_engineer = 1
 				field_hospital = 1
 				logistics_company = 1
 				armored_signal = 1
-				maintenance_company = 1
 			}
 
 			regimental_support = {
-				mot_fire_support = 2
-				medium_tank_destroyer_support = 1
+				medium_tank_destroyer_support = 2
 				medium_sp_anti_air_support = 1
-				anti_air_battery = 1
+				mot_fire_support = 2
 			}
 		}
 	}

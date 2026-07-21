@@ -29,7 +29,6 @@ light_armour_generic = {
 
 	motorised_light = {
         can_upgrade_in_field = {
-			has_equipment = { support_equipment > 100 }
 			has_equipment = { mechanized_equipment > 100 }
 		}
 		reinforce_prio = 2
@@ -40,20 +39,18 @@ light_armour_generic = {
 
 		target_template = {
 			regiments = {
-				light_armor = 4
+				light_armor = 6
 				motorized = 6
 			}
 
 			support = {
 				artillery = 1
+				anti_air = 1
 				engineer = 1
-				light_tank_recon = 1
 			}
 
 			regimental_support = {
-				mot_fire_support = 1
-				anti_air_battery = 1
-				anti_tank_battery = 1
+				mot_fire_support = 4
 			}
 		}
 	}
@@ -65,12 +62,16 @@ light_armour_generic = {
 		upgrade_prio = {
 			base = 100
 			modifier = {
+				date < 1941.1.1
+				factor = 0
+			}
+			modifier = {
 				factor = 0
 				NOT = { has_tech = mechanised_infantry }
 			}
 			modifier = {
 				factor = 0
-				NOT = { has_subdoctrine_in_track = infantry }
+				has_four_subdoctrine_tracks = no
 			}
 			modifier = {
 				factor = 0
@@ -84,22 +85,20 @@ light_armour_generic = {
 
 		target_template = {
 			regiments = {
-				light_armor = 4
+				light_armor = 6
 				mechanized = 6
 			}
 
 			support = {
-				artillery = 1
-				engineer = 1
+				anti_air = 1
+				mot_recon = 1
+				assault_engineer = 1
 				field_hospital = 1
 				logistics_company = 1
-				light_tank_recon = 1
 			}
 
 			regimental_support = {
-				mot_fire_support = 1
-				anti_air_battery = 1
-				anti_tank_battery = 1
+				mot_fire_support = 4
 			}
 		}
 	}
