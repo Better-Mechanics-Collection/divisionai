@@ -54,6 +54,10 @@ mass_infantry = {
 			support = {
 				artillery = 1
 			}
+
+			regimental_support = {
+				fire_support = 1
+			}
 		}
 	}
 
@@ -74,13 +78,20 @@ mass_infantry = {
 
 		target_template = {
 			regiments = {
-				infantry = 13
-                artillery_brigade = 1
+				infantry = 15
+				artillery_brigade = 1
 			}
 
 			support = {
 				artillery = 1
 				engineer = 1
+			}
+
+			regimental_support = {
+				fire_support = 2
+				field_guns = 1
+				anti_air_battery = 1
+				anti_tank_battery = 1
 			}
 		}
 	}
@@ -107,15 +118,22 @@ mass_infantry = {
 		target_template = {
 			regiments = {
 				infantry = 15
-                artillery_brigade = 2
+				artillery_brigade = 2
 			}
 
 			support = {
 				artillery = 1
-				anti_air = 1
-				anti_tank = 1
 				engineer = 1
 				field_hospital = 1
+				logistics_company = 1
+				signal_company = 1
+			}
+
+			regimental_support = {
+				fire_support = 2
+				field_guns = 1
+				anti_air_battery = 1
+				anti_tank_battery = 1
 			}
 		}
 	}
@@ -145,26 +163,30 @@ mass_infantry = {
 		target_template = {
 			regiments = {
 				infantry = 16
-                artillery_brigade = 2
+				artillery_brigade = 2
 				anti_tank_brigade = 1
 			}
 
 			support = {
 				artillery = 1
-				anti_air = 1
-                engineer = 1
-                field_hospital = 1
+				engineer = 1
+				field_hospital = 1
 				signal_company = 1
+				logistics_company = 1
+			}
+
+			regimental_support = {
+				fire_support = 2
+				field_guns = 1
+				anti_air_battery = 1
+				anti_tank_battery = 1
 			}
 		}
 	}
 
 	ma_space_marines_2 = {
 		can_upgrade_in_field = { 
-			OR = {
-				has_equipment = { medium_tank_equipment > 10 }
-				has_equipment = { medium_tank_chassis > 10 }
-			}
+			has_equipment = { medium_tank_chassis > 10 }
 		}
 		
 		upgrade_prio = {
@@ -199,26 +221,30 @@ mass_infantry = {
 		target_template = {
 			regiments = {
 				infantry = 13
-                artillery_brigade = 1
+				artillery_brigade = 1
 				medium_armor = 1
 			}
 
 			support = {
 				artillery = 1
-				anti_air = 1
-                engineer = 1
-                field_hospital = 1
+				engineer = 1
+				field_hospital = 1
 				signal_company = 1
+				logistics_company = 1
+			}
+
+			regimental_support = {
+				fire_support = 1
+				field_guns = 1
+				anti_air_battery = 1
+				anti_tank_battery = 1
 			}
 		}
 	}
 
 	ma_space_marines_3 = {
 		can_upgrade_in_field = { 
-			OR = {
-				has_equipment = { medium_tank_equipment > 10 }
-				has_equipment = { medium_tank_chassis > 10 }
-			}
+			has_equipment = { medium_tank_chassis > 10 }
 		}
 		
 		upgrade_prio = {
@@ -262,10 +288,17 @@ mass_infantry = {
 
 			support = {
 				artillery = 1
-				anti_air = 1
-                engineer = 1
-                field_hospital = 1
+				engineer = 1
+				field_hospital = 1
 				signal_company = 1
+				logistics_company = 1
+			}
+
+			regimental_support = {
+				fire_support = 2
+				field_guns = 1
+				anti_air_battery = 1
+				anti_tank_battery = 1
 			}
 		}
 	}

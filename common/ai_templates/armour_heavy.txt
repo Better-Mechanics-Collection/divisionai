@@ -52,11 +52,17 @@ heavy_armour_generic = {
 			}
 
 			support = {
-				anti_air = 1
 				light_tank_recon = 1
 				medium_flame_tank = 1
 				assault_engineer = 1
 				logistics_company = 1
+				maintenance_company = 1
+			}
+
+			regimental_support = {
+				mot_fire_support = 2
+				heavy_tank_destroyer_support = 1
+				medium_sp_anti_air_support = 1
 			}
 		}
     }
@@ -90,16 +96,23 @@ heavy_armour_generic = {
         target_template = {
 			regiments = {
 				heavy_armor = 8
-				motorized = 8
+				motorized = 9
 				mot_anti_tank_brigade = 2
 			}
 
 			support = {
-				anti_air = 1
 				light_tank_recon = 1
 				medium_flame_tank = 1
 				assault_engineer = 1
 				logistics_company = 1
+				maintenance_company = 1
+			}
+
+			regimental_support = {
+				mot_fire_support = 2
+				heavy_tank_destroyer_support = 1
+				medium_sp_anti_air_support = 1
+				anti_air_battery = 1
 			}
 		}
     }
@@ -135,16 +148,23 @@ heavy_armour_generic = {
         target_template = {
 			regiments = {
 				heavy_armor = 8
-				mechanized = 8
+				mechanized = 9
 				heavy_tank_destroyer_brigade = 2
 			}
 
 			support = {
-				anti_air = 1
 				light_tank_recon = 1
 				medium_flame_tank = 1
 				armored_engineer = 1
 				logistics_company = 1
+				maintenance_company = 1
+			}
+
+			regimental_support = {
+				mot_fire_support = 2
+				heavy_tank_destroyer_support = 1
+				medium_sp_anti_air_support = 1
+				anti_air_battery = 1
 			}
 		}
     }
@@ -152,10 +172,7 @@ heavy_armour_generic = {
 	heavy_modern_armour = {
 		can_upgrade_in_field = { 
 			has_equipment = { mechanized_equipment > 10 }
-			OR = {
-				has_equipment = { modern_tank_equipment > 10 }
-				has_equipment = { modern_tank_chassis > 10 }
-			}
+			has_equipment = { modern_tank_chassis > 10 }
 		}
 		reinforce_prio = 2
 
@@ -196,11 +213,18 @@ heavy_armour_generic = {
 			}
 
 			support = {
-				anti_air = 1
 				armored_engineer = 1
 				logistics_company = 1
 				armored_maintenance = 1
 				armored_signal = 1
+				maintenance_company = 1
+			}
+
+			regimental_support = {
+				mot_fire_support = 2
+				heavy_tank_destroyer_support = 1
+				medium_tank_destroyer_support = 1
+				medium_sp_anti_air_support = 1
 			}
 		}
 	}

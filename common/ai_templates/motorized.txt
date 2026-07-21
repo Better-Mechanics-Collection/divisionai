@@ -40,8 +40,14 @@ motorized_infantry = {
 
 			support = {
 				artillery = 1
-				anti_air = 1
 				engineer = 1
+				signal_company = 1
+			}
+
+			regimental_support = {
+				mot_fire_support = 1
+				anti_air_battery = 1
+				anti_tank_battery = 1
 			}
 		}
 	}
@@ -77,11 +83,17 @@ motorized_infantry = {
 			}
 
 			support = {
-				anti_tank = 1
 				mot_recon = 1
 				engineer = 1
 				field_hospital = 1
 				logistics_company = 1
+				signal_company = 1
+			}
+
+			regimental_support = {
+				mot_fire_support = 2
+				anti_air_battery = 1
+				anti_tank_battery = 1
 			}
 		}
 	}
@@ -122,11 +134,18 @@ motorized_infantry = {
 			}
 
 			support = {
-				anti_tank = 1
 				mot_recon = 1
 				engineer = 1
 				field_hospital = 1
 				logistics_company = 1
+				signal_company = 1
+			}
+
+			regimental_support = {
+				mot_fire_support = 1
+				rocket_battery = 1
+				anti_air_battery = 1
+				anti_tank_battery = 1
 			}
 		}
 	}
@@ -162,16 +181,23 @@ motorized_infantry = {
 		target_template = {
 			regiments = {
 				motorized = 9
-				motorized_rocket_brigade = 4
+				motorized_rocket_brigade = 5
 				mot_anti_air_brigade = 1
 			}
 
 			support = {
-				anti_tank = 1
 				mot_recon = 1
 				engineer = 1
 				field_hospital = 1
 				logistics_company = 1
+				signal_company = 1
+			}
+
+			regimental_support = {
+				mot_fire_support = 2
+				rocket_battery = 1
+				anti_air_battery = 1
+				anti_tank_battery = 1
 			}
 		}
 	}
@@ -207,16 +233,23 @@ motorized_infantry = {
 		target_template = {
 			regiments = {
 				motorized = 9
-				mot_artillery_brigade = 4
+				mot_artillery_brigade = 5
 				mot_anti_air_brigade = 1
 			}
 
 			support = {
-				anti_tank = 1
 				mot_recon = 1
 				engineer = 1
 				field_hospital = 1
 				logistics_company = 1
+				signal_company = 1
+			}
+
+			regimental_support = {
+				mot_fire_support = 2
+				field_guns = 1
+				anti_air_battery = 1
+				anti_tank_battery = 1
 			}
 		}
 	}
