@@ -111,15 +111,14 @@ maritime_patrol_production = {
 }
 
 # Air war dynamic production priorities
-light_aircraft_production_losing_air_war = {
+light_aircraft_production_air_war_ongoing = {
 	enable = {
 		is_eligible_for_light_aircraft_production = yes
 		has_war = yes
-		any_enemy_country = {
-			has_deployed_air_force_size = {
-				size > ROOT.num_deployed_planes_with_type@small_plane_airframe
-				type = fighter
-			}
+		any_enemy_country = { is_major = yes }
+		OR = {
+			has_yellow_air = yes
+			has_red_air = yes
 		}
 	}
 	abort_when_not_enabled = yes
@@ -130,27 +129,31 @@ light_aircraft_production_losing_air_war = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = fighter
-		value = 50
+		value = 25
 	}
 	ai_strategy = {
 		type = equipment_production_factor
 		id = cas
-		value = -50
+		value = -25
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = tactical_bomber
+		value = -25
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = strategic_bomber
+		value = -25
 	}
 }
 
-light_aircraft_production_winning_air_war = {
+light_aircraft_production_air_war_won = {
 	enable = {
 		is_eligible_for_light_aircraft_production = yes
 		has_war = yes
-		NOT = {
-			any_enemy_country = {
-				has_deployed_air_force_size = {
-					size > ROOT.num_deployed_planes_with_type@small_plane_airframe
-					type = fighter
-				}
-			}
-		}
+		any_enemy_country = { is_major = yes }
+		has_green_air = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -166,6 +169,58 @@ light_aircraft_production_winning_air_war = {
 		type = equipment_production_factor
 		id = cas
 		value = 50
+	}
+}
+
+light_aircraft_production_air_war_lost = {
+	enable = {
+		is_eligible_for_light_aircraft_production = yes
+		has_war = yes
+		any_enemy_country = { is_major = yes }
+		has_red_air = yes
+		the_air_force_is_dead_jim = yes
+	}
+	abort = {
+		OR = {
+			has_green_air = yes
+			has_yellow_air = yes
+		}
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cas
+		value = -100
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = tactical_bomber
+		value = -100
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = strategic_bomber
+		value = -100
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = naval_bomber
+		value = -100
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = maritime_patrol_plane
+		value = -100
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = air_transport
+		value = -100
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = scout_plane
+		value = -100
 	}
 }
 
