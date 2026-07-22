@@ -1,6 +1,6 @@
-######################
+####################################################################################################
 #	SUPPRESSION ROLE - this template is never built!
-######################
+####################################################################################################
 
 suppression_generic = {
 	role = suppression
@@ -18,7 +18,9 @@ suppression_generic = {
 	}
 
 	suppression_1 = {
-		can_upgrade_in_field = { always = no }
+        can_upgrade_in_field = {
+			has_equipment = { armored_car_equipment > 500 }
+		}
 		reinforce_prio = 0
 
 		upgrade_prio = {
@@ -37,6 +39,7 @@ suppression_generic = {
 
 	suppression_2 = {
 		can_upgrade_in_field = { always = no }
+		reinforce_prio = 0
 
 		upgrade_prio = {
 			base = 100
@@ -46,20 +49,15 @@ suppression_generic = {
 			}
 			modifier = {
 				factor = 0
-				OR = {
-					NOT = { has_subdoctrine_in_track = infantry }
-					NOT = { has_subdoctrine_in_track = combat_support }
-					NOT = { has_subdoctrine_in_track = operations }
-					NOT = { has_subdoctrine_in_track = armor }
-				}
+				has_four_subdoctrine_tracks = no
 			}
 			modifier = {
 				factor = 0
-				num_of_military_factories < 200
+				num_of_military_factories < 100
 			}
 			modifier = {
 				factor = 2
-				num_of_military_factories > 200
+				num_of_military_factories > 100
 			}
 		}
 

@@ -1,6 +1,6 @@
-######################
+####################################################################################################
 #	MARINE ROLE
-######################
+####################################################################################################
 
 marine_generic = {
 	role = marine
@@ -26,7 +26,9 @@ marine_generic = {
 	}
 
 	marine_1 = {
-		can_upgrade_in_field = { always = no }
+		can_upgrade_in_field = {
+			NOT = { has_tech = amphibious_mechanized_infantry }
+		}
 		reinforce_prio = 2
 
 		upgrade_prio = {
@@ -35,18 +37,19 @@ marine_generic = {
 
 		target_template = {
 			regiments = {
-				marine = 10
+				marine = 9
 			}
 
 			support = {
 				artillery = 1
-				logistics_company = 1
-				field_hospital = 1
+				anti_air = 1
+				recon = 1
+				medium_flame_tank = 1
+				engineer = 1
 			}
 
 			regimental_support = {
-				field_guns = 1
-				anti_air_battery = 1
+				fire_support = 2
 				anti_tank_battery = 1
 			}
 		}
@@ -60,11 +63,7 @@ marine_generic = {
 			base = 100
 			modifier = {
 				factor = 0
-				OR = {
-					NOT = { has_subdoctrine_in_track = infantry }
-					NOT = { has_subdoctrine_in_track = combat_support }
-					NOT = { has_subdoctrine_in_track = operations }
-				}
+				has_three_subdoctrine_tracks = no
 			}
 			modifier = {
 				factor = 0
@@ -79,21 +78,65 @@ marine_generic = {
 		target_template = {
 			regiments = {
 				marine = 12
-				artillery_brigade = 3
+				artillery_brigade = 2
 			}
 
 			support = {
 				artillery = 1
+				anti_air = 1
+				recon = 1
 				medium_flame_tank = 1
-				pioneer_support = 1
-				logistics_company = 1
-				field_hospital = 1
+				engineer = 1
 			}
 
 			regimental_support = {
-				fire_support = 2
-				field_guns = 1
-				anti_air_battery = 1
+				fire_support = 3
+				anti_tank_battery = 1
+			}
+		}
+	}
+
+	marine_3 = {
+		can_upgrade_in_field = { always = no }
+		reinforce_prio = 2
+
+		upgrade_prio = {
+			base = 100
+			modifier = {
+				factor = 0
+				NOT = { has_doctrine = marines_1 }
+				NOT = { has_doctrine = marines_2 }
+			}
+			modifier = {
+				factor = 0
+				has_three_subdoctrine_tracks = no
+			}
+			modifier = {
+				factor = 0
+				num_of_military_factories < 30
+			}
+			modifier = {
+				factor = 4
+				num_of_military_factories > 30
+			}
+		}
+
+		target_template = {
+			regiments = {
+				marine = 12
+				artillery_brigade = 2
+			}
+
+			support = {
+				artillery = 1
+				anti_air = 1
+				recon = 1
+				medium_flame_tank = 1
+				pioneer_support = 1
+			}
+
+			regimental_support = {
+				fire_support = 3
 				anti_tank_battery = 1
 			}
 		}
@@ -116,19 +159,14 @@ marine_generic = {
 			}
 			modifier = {
 				factor = 0
-				OR = {
-					NOT = { has_subdoctrine_in_track = infantry }
-					NOT = { has_subdoctrine_in_track = combat_support }
-					NOT = { has_subdoctrine_in_track = armor }
-					NOT = { has_subdoctrine_in_track = operations }
-				}
+				has_four_subdoctrine_tracks = no
 			}
 			modifier = {
 				factor = 0
 				is_eligible_for_improved_armor_production = no
 			}
 			modifier = {
-				factor = 4
+				factor = 6
 				is_eligible_for_improved_armor_production = yes
 			}
 		}
@@ -140,17 +178,17 @@ marine_generic = {
 			}
 
 			support = {
+				anti_air = 1
 				light_tank_recon = 1
 				medium_flame_tank = 1
 				assault_engineer = 1
 				logistics_company = 1
-				field_hospital = 1
 			}
 
 			regimental_support = {
+				medium_tank_destroyer_support = 1
+				medium_sp_anti_air_support = 1
 				mot_fire_support = 2
-				anti_air_battery = 1
-				anti_tank_battery = 1
 			}
 		}
 	}
