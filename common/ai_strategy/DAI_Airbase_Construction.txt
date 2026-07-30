@@ -1,0 +1,363 @@
+
+EarlyAirBases = {
+
+	available = {}
+
+	enable = {
+	
+		has_deployed_air_force_size = {
+						size > 1000
+						}
+						
+		air_base < 20
+	
+	}
+	
+	
+		
+		
+		
+	ai_strategy = {
+    type = building_target
+    id = air_base
+    value = 50
+}
+
+	abort_when_not_enabled = yes
+
+
+}
+
+
+
+TIER_ONE_BA_AIRBASES = {
+
+	available = {}
+
+	enable = {
+	
+		has_deployed_air_force_size = {
+						size > 4000
+						}
+						
+		air_base < 40
+	
+	}
+	
+	
+		
+		
+		
+	ai_strategy = {
+    type = building_target
+    id = air_base
+    value = 50
+}
+
+	abort_when_not_enabled = yes
+
+
+}
+
+TIER_TWO_BA_AIRBASES = {
+
+	available = {}
+
+	enable = {
+	
+		has_deployed_air_force_size = {
+						size > 6000
+						}
+						
+		air_base < 60
+	
+	}
+	
+	
+		
+		
+		
+	ai_strategy = {
+    type = building_target
+    id = air_base
+    value = 60
+}
+
+	abort_when_not_enabled = yes
+
+
+}
+
+
+TIER_THREE_BA_AIRBASES = {
+
+	available = {}
+
+	enable = {
+	
+		has_deployed_air_force_size = {
+						size > 8000
+						}
+						
+		air_base < 70
+	
+	}
+	
+	
+		
+		
+		
+	ai_strategy = {
+    type = building_target
+    id = air_base
+    value = 70
+}
+
+	abort_when_not_enabled = yes
+
+
+}
+
+
+TIER_FOUR_BA_AIRBASES = {
+
+	available = {}
+
+	enable = {
+	
+		has_deployed_air_force_size = {
+						size > 10000
+						}
+						
+		air_base < 80
+	
+	}
+	
+	
+		
+		
+		
+	ai_strategy = {
+    type = building_target
+    id = air_base
+    value = 80
+}
+
+	abort_when_not_enabled = yes
+
+
+}
+
+
+TIER_FIVE_BA_AIRBASES = {
+
+	available = {}
+
+	enable = {
+	
+		has_deployed_air_force_size = {
+						size > 12000
+						}
+						
+		air_base < 90
+	
+	}
+	
+	
+		
+		
+		
+	ai_strategy = {
+    type = building_target
+    id = air_base
+    value = 90
+}
+
+	abort_when_not_enabled = yes
+
+
+}
+
+
+TIER_FIVE_BA_AIRBASES_ActuallySix = {
+
+	available = {}
+
+	enable = {
+	
+		has_deployed_air_force_size = {
+						size > 14000
+						}
+						
+		air_base < 100
+	
+	}
+	
+	
+		
+		
+		
+	ai_strategy = {
+    type = building_target
+    id = air_base
+    value = 100
+}
+
+	abort_when_not_enabled = yes
+
+
+}
+
+
+TIER_SIX_BA_AIRBASES = {
+
+	available = {}
+
+	enable = {
+	
+		has_deployed_air_force_size = {
+						size > 16000
+						}
+						
+		air_base < 110
+	
+	}
+	
+	
+		
+		
+		
+	ai_strategy = {
+    type = building_target
+    id = air_base
+    value = 110
+}
+
+	abort_when_not_enabled = yes
+
+
+}
+
+
+
+TIER_Seven_BA_AIRBASES = {
+
+	available = {}
+
+	enable = {
+	
+		has_deployed_air_force_size = {
+						size > 20000
+						}
+						
+		air_base < 160
+	
+	}
+	
+	
+		
+		
+		
+	ai_strategy = {
+    type = building_target
+    id = air_base
+    value = 160
+}
+
+	abort_when_not_enabled = yes
+
+
+}
+
+
+
+TIER_EIGHT_BA_AIRBASES = {
+
+	available = {}
+
+	enable = {
+	
+		has_deployed_air_force_size = {
+						size > 30000
+						}
+						
+		air_base < 250
+	
+	}
+	
+	
+		
+		
+		
+	ai_strategy = {
+    type = building_target
+    id = air_base
+    value = 250
+}
+
+	abort_when_not_enabled = yes
+
+
+}
+
+
+
+TIER_NINE_BA_AIRBASES = {
+
+	available = {}
+
+	enable = {
+	
+		has_deployed_air_force_size = {
+						size > 50000
+						}
+						
+		air_base < 500
+	
+	}
+	
+	
+		
+		
+		
+	ai_strategy = {
+    type = building_target
+    id = air_base
+    value = 500
+}
+
+	abort_when_not_enabled = yes
+
+
+}
+
+
+TIER_TEN_BA_AIRBASES = {
+
+	available = {}
+
+	enable = {
+	
+		has_deployed_air_force_size = {
+						size > 100000
+						}
+						
+		
+	
+	}
+	
+	
+		
+		
+		
+	ai_strategy = {
+    type = building_target
+    id = air_base
+    value = 1000
+}
+
+	abort_when_not_enabled = yes
+
+
+}
+	
