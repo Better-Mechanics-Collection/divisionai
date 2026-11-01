@@ -1200,26 +1200,6 @@ leave_army_spirits_for_last = {
 	}
 }
 
-make_trains = {
-	enable = { 
-		is_eligible_for_armor_production = yes
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = { type = equipment_production_min_factories_archetype id = train_equipment value = 1 }
-}
-
-make_trucks = { 
-	enable = { 
-		is_eligible_for_armor_production = yes
-		has_tech = motorised_infantry
-		NOT = {has_tech = mechanised_infantry}
-	} 
-	abort_when_not_enabled = yes
-
-	ai_strategy = { type = equipment_production_min_factories_archetype id = motorized_equipment value = 2 }
-}
-
 # Nuclear construction is handled by DAI_dynamic_construction.txt.
 
 always_upgrade_tanks = {
