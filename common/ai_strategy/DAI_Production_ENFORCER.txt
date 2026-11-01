@@ -107,32 +107,6 @@ aNCFO_AI_motorized_surplus = {
 	}
 }
 
-always_upgrade_tanks = {
-	enable = { always = yes }
-	abort_when_not_enabled = yes
-	
-	ai_strategy = { type = production_upgrade_desire_offset id = light_tank_chassis_1 value = 100 }
-	ai_strategy = { type = production_upgrade_desire_offset id = light_tank_chassis_2 value = 100 }
-	ai_strategy = { type = production_upgrade_desire_offset id = light_tank_chassis_3 value = 100 }
-	ai_strategy = { type = production_upgrade_desire_offset id = medium_tank_chassis_1 value = 100 }
-	ai_strategy = { type = production_upgrade_desire_offset id = medium_tank_chassis_2 value = 100 }
-	ai_strategy = { type = production_upgrade_desire_offset id = medium_tank_chassis_3 value = 100 }
-	ai_strategy = { type = production_upgrade_desire_offset id = heavy_tank_chassis_1 value = 100 }
-	ai_strategy = { type = production_upgrade_desire_offset id = heavy_tank_chassis_2 value = 100 }
-	ai_strategy = { type = production_upgrade_desire_offset id = heavy_tank_chassis_3 value = 100 }
-	ai_strategy = { type = production_upgrade_desire_offset id = modern_tank_chassis value = 100 }
-}
-
-always_upgrade_fighters = {
-	enable = { always = yes }
-	abort_when_not_enabled = yes
-	
-	ai_strategy = { type = production_upgrade_desire_offset id = small_plane_airframe_1 value = 100 }
-	ai_strategy = { type = production_upgrade_desire_offset id = small_plane_airframe_2 value = 100 }
-	ai_strategy = { type = production_upgrade_desire_offset id = small_plane_airframe_3 value = 100 }
-	ai_strategy = { type = production_upgrade_desire_offset id = small_plane_airframe_4 value = 100 }
-}
-
 ######################################
 #	SP EQUIPMENT - MEDIUM
 #
