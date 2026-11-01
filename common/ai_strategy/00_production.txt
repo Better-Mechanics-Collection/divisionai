@@ -1248,25 +1248,6 @@ always_upgrade_fighters = {
 	ai_strategy = { type = production_upgrade_desire_offset id = small_plane_airframe_4 value = 100 }
 }
 
-create_armor_when_used_offset = { # Create Armor
-	enable = {
-		OR = {
-			estimated_intel_max_armor = { tag = ROOT value > 10 }
-			#division_has_battalion_in_template = light_armor
-			#division_has_battalion_in_template = medium_armor
-			#division_has_battalion_in_template = heavy_armor
-			#division_has_battalion_in_template = modern_armor
-		}
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = equipment_production_factor
-		id = armor
-		value = 10
-	}
-}
-
-
 default_stockpile_management = {
 	enable = {
 		num_divisions > 150
