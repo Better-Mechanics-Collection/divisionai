@@ -13,6 +13,12 @@ light_aircraft_production_default = {
 	ai_strategy = { type = air_factory_balance value = 100 }
 	ai_strategy = { type = unit_ratio id = fighter value = 70 }
 	ai_strategy = { type = unit_ratio id = cas value = 30 }
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = 50
+	}
 }
 
 light_aircraft_production_air_war_ongoing = {
