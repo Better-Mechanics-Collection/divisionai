@@ -66,25 +66,6 @@ infantry_min_production_6 = {
 	ai_strategy = { type = equipment_production_min_factories_archetype id = motorized_equipment 	value = 1 }
 }
 
-infantry_min_production_7 = {
-	enable = { num_of_military_factories > 70 }
-	abort_when_not_enabled = yes
-
-	ai_strategy = { type = equipment_production_min_factories_archetype id = support_equipment 		value = 1 }
-	ai_strategy = { type = equipment_production_min_factories_archetype id = artillery_equipment 	value = 1 }
-	ai_strategy = { type = equipment_production_min_factories_archetype id = anti_tank_equipment 	value = 1 }
-	ai_strategy = { type = equipment_production_min_factories_archetype id = motorized_equipment 	value = 1 }
-}
-
-infantry_min_production_8 = {
-	enable = { num_of_military_factories > 80 }
-	abort_when_not_enabled = yes
-
-	ai_strategy = { type = equipment_production_min_factories_archetype id = support_equipment 		value = 1 }
-	ai_strategy = { type = equipment_production_min_factories_archetype id = artillery_equipment 	value = 1 }
-	ai_strategy = { type = equipment_production_min_factories_archetype id = motorized_equipment 	value = 1 }
-}
-
 ####################################################################################################
 #	MINIMUM MILS: PLANES
 ####################################################################################################
