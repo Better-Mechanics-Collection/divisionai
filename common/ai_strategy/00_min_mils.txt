@@ -17,7 +17,7 @@ infantry_min_production_2 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories_archetype id = infantry_equipment 	value = 4 }
-	ai_strategy = { type = equipment_production_min_factories_archetype id = support_equipment 		value = 2 }
+	ai_strategy = { type = equipment_production_min_factories_archetype id = support_equipment 		value = 1 }
 	ai_strategy = { type = equipment_production_min_factories_archetype id = artillery_equipment 	value = 1 }
 }
 
