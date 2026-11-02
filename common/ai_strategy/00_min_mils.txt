@@ -8,7 +8,7 @@ infantry_min_production_1 = {
 	enable = { num_of_military_factories > 10 }
 	abort_when_not_enabled = yes
 
-	ai_strategy = { type = equipment_production_min_factories_archetype id = infantry_equipment 	value = 7 }
+	ai_strategy = { type = equipment_production_min_factories_archetype id = infantry_equipment 	value = 8 }
 	ai_strategy = { type = equipment_production_min_factories_archetype id = artillery_equipment 	value = 1 }
 }
 
@@ -36,8 +36,8 @@ infantry_min_production_4 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories_archetype id = infantry_equipment 	value = 1 }
-	ai_strategy = { type = equipment_production_min_factories_archetype id = support_equipment 		value = 1 }
-	ai_strategy = { type = equipment_production_min_factories_archetype id = artillery_equipment 	value = 0 }
+	ai_strategy = { type = equipment_production_min_factories_archetype id = support_equipment 		value = 2 }
+	ai_strategy = { type = equipment_production_min_factories_archetype id = artillery_equipment 	value = 1 }
 	ai_strategy = { type = equipment_production_min_factories_archetype id = anti_air_equipment 	value = 1 }
 	ai_strategy = { type = equipment_production_min_factories_archetype id = anti_tank_equipment 	value = 1 }
 	ai_strategy = { type = equipment_production_min_factories_archetype id = motorized_equipment 	value = 1 }
@@ -47,7 +47,7 @@ infantry_min_production_5 = {
 	enable = { num_of_military_factories > 50 }
 	abort_when_not_enabled = yes
 
-	ai_strategy = { type = equipment_production_min_factories_archetype id = infantry_equipment 	value = 0 }
+	ai_strategy = { type = equipment_production_min_factories_archetype id = infantry_equipment 	value = 1 }
 	ai_strategy = { type = equipment_production_min_factories_archetype id = support_equipment 		value = 1 }
 	ai_strategy = { type = equipment_production_min_factories_archetype id = artillery_equipment 	value = 1 }
 	ai_strategy = { type = equipment_production_min_factories_archetype id = anti_air_equipment 	value = 1 }
@@ -82,7 +82,7 @@ infantry_min_production_8 = {
 
 	ai_strategy = { type = equipment_production_min_factories_archetype id = support_equipment 		value = 1 }
 	ai_strategy = { type = equipment_production_min_factories_archetype id = artillery_equipment 	value = 1 }
-	ai_strategy = { type = equipment_production_min_factories_archetype id = motorized_equipment 	value = 0 }
+	ai_strategy = { type = equipment_production_min_factories_archetype id = motorized_equipment 	value = 1 }
 }
 
 ####################################################################################################
@@ -285,7 +285,7 @@ armor_min_production_3 = {
 	}
 	abort_when_not_enabled = yes
 
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 1 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 2 }
 	ai_strategy = { type = equipment_production_min_factories_archetype 	id = medium_tank_chassis	 		value = 1 }
 }
 
@@ -310,7 +310,7 @@ armor_min_production_5 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 2 }
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = medium_tank_chassis	 		value = 0 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = medium_tank_chassis	 		value = 1 }
 }
 
 armor_min_production_6 = {
@@ -369,8 +369,8 @@ armor_min_production_10 = {
 	}
 	abort_when_not_enabled = yes
 
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 0 }
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = medium_tank_chassis	 		value = 1 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 1 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = medium_tank_chassis	 		value = 2 }
 }
 
 armor_min_production_11 = {
@@ -418,7 +418,7 @@ armor_min_production_14 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 1 }
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = medium_tank_chassis	 		value = 2 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = medium_tank_chassis	 		value = 3 }
 }
 
 armor_min_production_15 = {
@@ -468,7 +468,7 @@ armor_min_production_18 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 1 }
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = medium_tank_chassis	 		value = 1 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = medium_tank_chassis	 		value = 2 }
 	ai_strategy = { type = equipment_production_min_factories_archetype 	id = heavy_tank_chassis	 			value = 1 }
 }
 
@@ -493,9 +493,9 @@ armor_min_production_20 = {
 	}
 	abort_when_not_enabled = yes
 
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 0 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 1 }
 	ai_strategy = { type = equipment_production_min_factories_archetype 	id = medium_tank_chassis	 		value = 2 }
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = heavy_tank_chassis	 			value = 0 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = heavy_tank_chassis	 			value = 1 }
 }
 
 armor_min_production_21 = {
@@ -563,9 +563,9 @@ armor_min_production_25 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 1 }
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = medium_tank_chassis	 		value = 0 }
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = heavy_tank_chassis	 			value = 1 }
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = heavy_tank_destroyer_chassis	value = 0 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = medium_tank_chassis	 		value = 1 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = heavy_tank_chassis	 			value = 2 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = heavy_tank_destroyer_chassis	value = 1 }
 }
 
 ####################################################################################################
@@ -610,8 +610,8 @@ gbp_heavy_armor_min_production_offset_3 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 1 }
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = medium_tank_chassis	 		value = -1 }
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = heavy_tank_chassis	 			value = 1 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = medium_tank_chassis	 		value = -2 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = heavy_tank_chassis	 			value = 2 }
 }
 
 gbp_heavy_armor_min_production_offset_4 = {
@@ -637,7 +637,7 @@ gbp_heavy_armor_min_production_offset_5 = {
 	}
 	abort_when_not_enabled = yes
 
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 0 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 1 }
 	ai_strategy = { type = equipment_production_min_factories_archetype 	id = medium_tank_chassis	 		value = -2 }
 	ai_strategy = { type = equipment_production_min_factories_archetype 	id = heavy_tank_chassis	 			value = 2 }
 }
@@ -685,7 +685,7 @@ modern_armor_min_production_2 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 3 }
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = modern_tank_chassis	 		value = 5 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = modern_tank_chassis	 		value = 6 }
 }
 
 modern_armor_min_production_3 = {
@@ -698,7 +698,7 @@ modern_armor_min_production_3 = {
 	}
 	abort_when_not_enabled = yes
 
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 2 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 3 }
 	ai_strategy = { type = equipment_production_min_factories_archetype 	id = modern_tank_chassis	 		value = 6 }
 }
 
@@ -713,7 +713,7 @@ modern_armor_min_production_4 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 3 }
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = modern_tank_chassis	 		value = 5 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = modern_tank_chassis	 		value = 6 }
 }
 
 modern_armor_min_production_5 = {
@@ -727,7 +727,7 @@ modern_armor_min_production_5 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 3 }
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = modern_tank_chassis	 		value = 5 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = modern_tank_chassis	 		value = 6 }
 }
 
 modern_armor_min_production_6 = {
@@ -740,7 +740,7 @@ modern_armor_min_production_6 = {
 	}
 	abort_when_not_enabled = yes
 
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 3 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 4 }
 	ai_strategy = { type = equipment_production_min_factories_archetype 	id = modern_tank_chassis	 		value = 8 }
 }
 
@@ -755,7 +755,7 @@ modern_armor_min_production_7 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 4 }
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = modern_tank_chassis	 		value = 7 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = modern_tank_chassis	 		value = 8 }
 }
 
 modern_armor_min_production_8 = {
@@ -768,8 +768,8 @@ modern_armor_min_production_8 = {
 	}
 	abort_when_not_enabled = yes
 
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 3 }
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = modern_tank_chassis	 		value = 7 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 4 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = modern_tank_chassis	 		value = 8 }
 }
 
 modern_armor_min_production_9 = {
@@ -783,7 +783,7 @@ modern_armor_min_production_9 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories_archetype 	id = mechanized_equipment	 		value = 4 }
-	ai_strategy = { type = equipment_production_min_factories_archetype 	id = modern_tank_chassis	 		value = 7 }
+	ai_strategy = { type = equipment_production_min_factories_archetype 	id = modern_tank_chassis	 		value = 8 }
 }
 
 ####################################################################################################
