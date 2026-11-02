@@ -105,7 +105,6 @@ planes_min_production_6 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories			id = fighter 				value = 2 }
-	ai_strategy = { type = equipment_production_min_factories			id = cas 					value = 1 }
 }
 
 planes_min_production_7 = {
@@ -113,7 +112,6 @@ planes_min_production_7 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories			id = fighter 				value = 2 }
-	ai_strategy = { type = equipment_production_min_factories			id = cas 					value = 1 }
 }
 
 planes_min_production_8 = {
@@ -121,7 +119,6 @@ planes_min_production_8 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories			id = fighter 				value = 2 }
-	ai_strategy = { type = equipment_production_min_factories			id = cas 					value = 1 }
 }
 
 planes_min_production_9 = {
@@ -129,7 +126,6 @@ planes_min_production_9 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories			id = fighter 				value = 2 }
-	ai_strategy = { type = equipment_production_min_factories			id = cas 					value = 1 }
 }
 
 planes_min_production_10 = {
@@ -137,7 +133,6 @@ planes_min_production_10 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories			id = fighter 				value = 2 }
-	ai_strategy = { type = equipment_production_min_factories			id = cas 					value = 1 }
 }
 
 planes_min_production_11 = {
@@ -145,7 +140,6 @@ planes_min_production_11 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories			id = fighter 				value = 1 }
-	ai_strategy = { type = equipment_production_min_factories			id = cas 					value = 1 }
 }
 
 planes_min_production_12 = {
@@ -153,7 +147,6 @@ planes_min_production_12 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories			id = fighter 				value = 1 }
-	ai_strategy = { type = equipment_production_min_factories			id = cas 					value = 1 }
 }
 
 planes_min_production_13 = {
@@ -161,7 +154,6 @@ planes_min_production_13 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories			id = fighter 				value = 1 }
-	ai_strategy = { type = equipment_production_min_factories			id = cas 					value = 1 }
 }
 
 planes_min_production_14 = {
@@ -169,7 +161,6 @@ planes_min_production_14 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories			id = fighter 				value = 1 }
-	ai_strategy = { type = equipment_production_min_factories			id = cas 					value = 1 }
 }
 
 planes_min_production_15 = {
@@ -177,7 +168,6 @@ planes_min_production_15 = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = equipment_production_min_factories			id = fighter 				value = 1 }
-	ai_strategy = { type = equipment_production_min_factories			id = cas 					value = 1 }
 }
 
 ####################################################################################################
